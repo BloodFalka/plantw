@@ -218,3 +218,8 @@ img{
 b{
 	color: #CCFFF1;
 }
+
+section{
+	position: relative;
+	width: 50%;
+}
