@@ -63,10 +63,6 @@ a
   transition: color 0.3s ease;
 }
 
-a:visited{
-	text-decoration: none;
-}
-
 a:hover
 {
   color: tomato;
