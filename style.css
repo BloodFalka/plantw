@@ -13,7 +13,7 @@ header {
 		top:0px;
 		position: fixed;
 		background-color: rgba(255, 192, 203, 1);
-		border: 2px dotted white;
+		border: 0.1vw dotted white;
 		margin-bottom: 5px;
 		height: 4%;
 		width: 100%;
@@ -30,7 +30,7 @@ article{
 	background-color: rgba(135, 206, 235, 0.55);
 	width: 86%;
 	height: 180%;
-	border: 2px dotted white;
+	border: 0.1vw dotted white;
 	text-align: center;
 }
 
@@ -41,7 +41,7 @@ aside{
 	background-color: rgba(111, 211, 151, 0.42);
 	width: 10%;
 	height: 180%;
-	border: 2px dotted white;
+	border: 0.1vw dotted white;
 	text-align: center;
 }
 
@@ -75,10 +75,10 @@ a:hover
   visibility: hidden;
   top: 0;
   left: -100%;
-  width: 300px;
+  width: 13vw;
   height: 100%;
   margin: 0;
-  padding: 80px 0;
+  padding: 5vw 0;
   list-style: none;
   text-align: center;
   background-color: #CCFFF1;
@@ -104,10 +104,10 @@ a:hover
 /* элементы меню */
 .menu_item {
   display: block;
-  padding: 12px 24px;
+  padding: 0.5vw 0.24vw;
   color: #173;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 1.5vw;
   font-weight: 600;
   text-decoration: none;
 }
@@ -149,7 +149,7 @@ a:hover
   display: block;
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 0.15vw;
   background-color: #ffffff;
 }
 .menu_btn > span::before {
@@ -209,15 +209,15 @@ p{
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		width: 50%;
 		left: 25%;
-		margin-top: 2px;
-		margin-bottom: 2px;
+		margin-top: 0.1vw;
+		margin-bottom: 0.1vw;
 }
 
 img{
 	width: 20%;
-	border: 4px dotted green;
-	border-radius: 15px;
-	margin: 10px
+	border: 0.15vw solid green;
+	border-radius: 1vw;
+	margin: 0vw;
 }
 
 b, em{
@@ -230,21 +230,28 @@ aside b, em{
 }
 
 aside img{
-	margin-top: 2px;
+	margin-top: 0.1vw;
+	margin-left: 0.5vw;
+	margin-right: 0.5vw;
+	margin-bottom: 0.2vw;
 	width:70%;
-	border: 2px solid white;
+	border: 0.1vw solid white;
+	border-radius: 0.15vw;
 }
 
 aside p {
-	font-size: 10px;
+	font-size: 0.5vw;
 	text-align: center;
+	margin-left: 0.15vw;
+	margin-right: 0.5vw;
+	margin-bottom: 0.4vw;
 }
 
 h2{
-	font-size: 20px;
 	color: #6B8E23;
-	margin-top: 10px;
+	margin-top: 0.1vw;
 	margin-bottom: 0px;
+	font-size: 1vw;
 }
 
 aside h1{
@@ -252,19 +259,22 @@ aside h1{
 }
 
 blockquote {
-    border-bottom: 1px dashed white;
-    border-top: 1px dashed white;
+    border-bottom: 0.1vw dashed white;
+    border-top: 0.1vw dashed white;
     color: #878787;
     font-family: Georgia,serif;
-    font-size: 9px;
+    font-size: 0.5vw;
     font-style: italic;
-    line-height: 1.45;
+    line-height: 0.74vw;
     position: relative;
     text-align: right;
-		margin-bottom: 15px;
+		margin-bottom: 0.5vw;
+		margin-top: 0.1vw;
+		margin-left: 0.5vw;
+		margin-right: 0.5vw;
 }
 
 blockquote p{
     color: #979797;
-    font-size: 11px;
+    font-size: 0.6vw;
 }
