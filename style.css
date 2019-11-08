@@ -34,6 +34,16 @@ article{
 	text-align: center;
 }
 
+article > .cactus{
+	width: 50%;
+	float: right;
+}
+
+article >.ajahuaska{
+	width: 50%;
+	float:left;
+}
+
 aside{
 	position: absolute;
 	margin: 15px 15px 5px 5px;
@@ -214,10 +224,10 @@ p{
 }
 
 img{
-	width: 20%;
+	width: 30%;
 	border: 0.15vw solid green;
 	border-radius: 1vw;
-	margin: 0vw;
+	margin-top: 0.5vw;
 }
 
 b, em{
