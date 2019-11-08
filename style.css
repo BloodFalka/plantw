@@ -63,6 +63,10 @@ a
   transition: color 0.3s ease;
 }
 
+a:visited{
+	text-decoration: none;
+}
+
 a:hover
 {
   color: tomato;
@@ -220,8 +224,13 @@ img{
 	margin: 10px
 }
 
-b{
+b, em{
 	color: #CCFFF1;
+}
+
+aside b, em{
+	color: #6B8E23;
+	font-weight: 600;
 }
 
 aside img{
@@ -237,7 +246,7 @@ aside p {
 
 h2{
 	font-size: 20px;
-	color: white;
+	color: #6B8E23;
 	margin-top: 10px;
 	margin-bottom: 0px;
 }
@@ -256,6 +265,7 @@ blockquote {
     line-height: 1.45;
     position: relative;
     text-align: right;
+		margin-bottom: 15px;
 }
 
 blockquote p{
