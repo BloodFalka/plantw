@@ -37,6 +37,7 @@ article{
 aside{
 	position: absolute;
 	margin: 15px 15px 5px 5px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-color: rgba(111, 211, 151, 0.42);
 	width: 10%;
 	height: 180%;
@@ -44,7 +45,7 @@ aside{
 	text-align: center;
 }
 
-footer{
+//*footer{
 	position: relative;
 	top:2600px;
 	margin: 15px 15px 5px 5px;
@@ -52,7 +53,7 @@ footer{
 	width: 100%;
 	height: 10%;
 	border: 2px dotted white;
-}
+}*//
 
 a
 {
@@ -200,6 +201,7 @@ h1{
 		color: white;
 		font-size: 2vw;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		margin-bottom: 0px;
 }
 p{
 		position: relative;
@@ -207,18 +209,56 @@ p{
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		width: 50%;
 		left: 25%;
+		margin-top: 2px;
+		margin-bottom: 2px;
 }
 
 img{
 	width: 20%;
 	border: 4px dotted green;
 	border-radius: 15px;
+	margin: 10px
 }
 
 b{
 	color: #CCFFF1;
 }
 
-section{
+aside img{
+	margin-top: 2px;
+	width:70%;
+	border: 2px solid white;
+}
 
+aside p {
+	font-size: 10px;
+	text-align: center;
+}
+
+h2{
+	font-size: 20px;
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+aside h1{
+	color:tomato;
+}
+
+blockquote {
+    border-bottom: 1px dashed white;
+    border-top: 1px dashed white;
+    color: #878787;
+    font-family: Georgia,serif;
+    font-size: 9px;
+    font-style: italic;
+    line-height: 1.45;
+    position: relative;
+    text-align: right;
+}
+
+blockquote p{
+    color: #979797;
+    font-size: 11px;
 }
