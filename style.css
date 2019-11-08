@@ -4,7 +4,7 @@ body {
 		background-position:center; /* Положение фона */
 		background-repeat: no-repeat; /* Отменяем повторение фона */
 		background-color: pink;
-		background-size: 100% 100%;
+		background-size: 100vw;
 		background-attachment: fixed;
 }
 header {
