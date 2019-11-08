@@ -8,14 +8,13 @@ body {
 		background-attachment: fixed;
 }
 header {
-		z-index: 100;
+		z-index: 1;
 		left:0px;
 		top:0px;
 		position: fixed;
 		background-color: rgba(255, 192, 203, 1);
 		border: 0.1vw dotted white;
-		margin-bottom: 5px;
-		height: 4%;
+		height: 1.5vw;
 		width: 100%;
 		font-size: 2vw;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -23,18 +22,29 @@ header {
 		color:white;
 }
 
-article{
-	position: absolute;
-	left: 12%;
-	margin: 15px 15px 5px 5px;
-	background-color: rgba(135, 206, 235, 0.55);
-	width: 86%;
-	height: 180%;
+aside{
+	position: relative;
+	margin-top: 1.7vw;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background-color: rgba(111, 211, 151, 0.42);
+	float:left;
+	width: 10%;
 	border: 0.1vw dotted white;
 	text-align: center;
 }
 
-article > .cactus{
+main{
+	float:right;
+	position: relative;
+	margin-top: 1.7vw;
+	background-color: rgba(135, 206, 235, 0.55);
+	width: 89%;
+	height: 100%;
+	border: 0.1vw dotted white;
+	text-align: center;
+}
+
+article >.cactus{
 	width: 50%;
 	float: right;
 }
@@ -44,26 +54,16 @@ article >.ajahuaska{
 	float:left;
 }
 
-aside{
-	position: absolute;
-	margin: 15px 15px 5px 5px;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	background-color: rgba(111, 211, 151, 0.42);
-	width: 10%;
-	height: 180%;
-	border: 0.1vw dotted white;
-	text-align: center;
-}
-
-//*footer{
+footer{
 	position: relative;
-	top:2600px;
-	margin: 15px 15px 5px 5px;
-	background-color: lightgreen;
-	width: 100%;
+	float: left;
+	clear:both;
+	margin-top: 0.5vw;
+	background-color: rgba(255,250,205, 0.55);
+	width: 99%;
 	height: 10%;
-	border: 2px dotted white;
-}*//
+	border: 0.1vw dotted white;
+}
 
 a
 {
@@ -95,21 +95,6 @@ a:hover
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 }
 
-/*.sub_menu_box {
-  display: block;
-  position: fixed;
-  visibility: hidden;
-	top: 0;
-  left: -100%;
-  width: 300px;
-  height: 100%;
-  margin: 0;
-  padding: 80px 0;
-  list-style: none;
-  text-align: center;
-  background-color: #CCFFF1;
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-}*/
 
 /* элементы меню */
 .menu_item {
@@ -121,16 +106,6 @@ a:hover
   font-weight: 600;
   text-decoration: none;
 }
-
-/*.sub_menu_item {
-  display: block;
-  padding: 12px 34px;
-  color: #173;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  text-decoration: none;
-}*/
 
 .menu_item:hover {
   background-color: #CFD8DC;
@@ -144,11 +119,12 @@ a:hover
 .menu_btn {
   display: flex; /* используем flex для центрирования содержимого */
   align-items: center;  /* центрируем содержимое кнопки */
-  position: fixed;
-  top: 0.3%;
-  left: 10px;
-  width: 26px;
-  height: 26px;
+  position: relative;
+	float: left;
+	margin: 0.1vw 0.1vw 0vw 0.6vw;
+	padding: 0;
+  width: 1.5vw;
+	height: 1.5vw;
   cursor: pointer;
   z-index: 1;
 }
@@ -158,17 +134,23 @@ a:hover
 .menu_btn > span::after {
   display: block;
   position: absolute;
-  width: 100%;
+  width: 1vw;
   height: 0.15vw;
   background-color: #ffffff;
 }
+.menu_btn > span {
+  content: '';
+  top: 0.5vw;
+}
+
 .menu_btn > span::before {
   content: '';
-  top: -8px;
+  top: -0.35vw;
 }
 .menu_btn > span::after {
   content: '';
-  top: 8px;
+  top: 0.3vw;
+	height: 0.2vw;
 }
 #menu_toggle:checked ~ .menu_btn > span {
   transform: rotate(45deg);
@@ -185,11 +167,6 @@ a:hover
 	background-color: #000000;
 }
 #menu_toggle:checked ~ .menu_box {
-  visibility: visible;
-  left: 0;
-}
-
-#sub_open:hover ~ .sub_menu_box {
   visibility: visible;
   left: 0;
 }
@@ -212,6 +189,7 @@ h1{
 		font-size: 2vw;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		margin-bottom: 0px;
+		margin-top: 0.2vw;
 }
 p{
 		position: relative;
