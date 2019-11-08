@@ -266,3 +266,14 @@ blockquote p{
     color: #979797;
     font-size: 0.6vw;
 }
+
+.logo_aloe{
+		position: relative;
+		float: right;
+		padding: 0;
+		right: 1vw;
+		margin: 0;
+ 		top: 0vw;
+ 		width:1.3vw;
+ 		border: none;
+}
