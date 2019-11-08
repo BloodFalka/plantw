@@ -59,9 +59,9 @@ footer{
 	float: left;
 	clear:both;
 	margin-top: 0.5vw;
+	margin-bottom: 0.5vw;
 	background-color: rgba(255,250,205, 0.55);
 	width: 99%;
-	height: 10%;
 	border: 0.1vw dotted white;
 }
 
@@ -278,14 +278,22 @@ blockquote p{
  		border: none;
 }
 
-.sociallogo{
-	position: relative;
-	width:3vw;
-	border: none;
-}
 .title{
 	position: relative;
 	float: right;
 	right: 4.7vw;
 	top:0.2vw;
+}
+
+.sociallogo img{
+	position: relative;
+	width:3vw;
+	border: none;
+	left: 50%;
+}
+
+.sociallogo p{
+	left: 48%;
+	color: #6B8E23;
+	font-weight: 600;
 }
