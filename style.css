@@ -271,7 +271,7 @@ blockquote p{
 		position: relative;
 		float: right;
 		padding: 0;
-		right: 0.5vw;
+		right: 1vw;
 		margin: 0;
  		top: 0vw;
  		width:1.3vw;
@@ -284,6 +284,8 @@ blockquote p{
 	border: none;
 }
 .title{
-	right:4.2vw;
+	position: relative;
+	float: right;
+	right: 4.7vw;
 	top:0.2vw;
 }
