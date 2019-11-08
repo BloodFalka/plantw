@@ -271,9 +271,19 @@ blockquote p{
 		position: relative;
 		float: right;
 		padding: 0;
-		right: 1vw;
+		right: 0.5vw;
 		margin: 0;
  		top: 0vw;
  		width:1.3vw;
  		border: none;
+}
+
+.sociallogo{
+	position: relative;
+	width:3vw;
+	border: none;
+}
+.title{
+	right:4.2vw;
+	top:0.2vw;
 }
