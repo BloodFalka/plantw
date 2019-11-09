@@ -43,7 +43,7 @@ main{
 	float:right;
 	position: relative;
 	margin-top: 1.7vw;
-	background-color: rgba(135, 206, 235, 1.25);
+	background-color: rgba(135, 206, 235, 0.7);
 	width: 89%;
 	border-radius: 0.5vw;
 	border: 0.1vw solid white;
@@ -91,7 +91,6 @@ a
 {
   text-decoration: none;
   color: #232323;
-
   transition: color 0.3s ease;
 }
 
@@ -110,13 +109,12 @@ a:hover
   width: 13vw;
   height: 100%;
   margin: 0;
-  padding: 5vw 0;
+  padding: 2vw 0;
   list-style: none;
   text-align: center;
   background-color: #CCFFF1;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 }
-
 
 /* элементы меню */
 .menu_item {
@@ -131,6 +129,33 @@ a:hover
 
 .menu_item:hover {
   background-color: #CFD8DC;
+}
+
+.sub_menu{
+	position: relative;
+	padding: 0;
+	display: none;
+	list-style: none;
+	text-align: left;
+	padding-left: 4.5vw;
+}
+.sub_menu_item{
+	display: block;
+  padding: 0.15vw 0.24vw;
+  color: rgba(17, 119, 51, 0.8);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3vw;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sub_menu_item:hover {
+  background-color: #CFD8DC;
+}
+
+ul.menu_box > li:hover > ul.sub_menu{
+	transition-duration: .35s;
+	display: block;
 }
 
 /* скрываем чекбокс */
