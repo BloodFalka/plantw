@@ -28,7 +28,7 @@ header {
 
 aside{
 	position: relative;
-	margin-top: 2.7vh;
+	margin-top: 3.3vh;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-color: rgba(111, 211, 151, 0.52);
 	float:left;
@@ -41,7 +41,7 @@ aside{
 main{
 	float:right;
 	position: relative;
-	margin-top: 2.7vh;
+	margin-top: 3.3vh;
 	background-color: rgba(135, 206, 235, 0.7);
 	width: 84%;
 	border-radius: 0.5vw;
@@ -190,7 +190,8 @@ ul.menu_box > li:hover > ul.sub_menu{
   position: absolute;
   width: 1vw;
   height: 0.15vw;
-  background-color: #ffffff;
+  background-color: white;
+	z-index: 1;
 }
 .menu_btn > span {
   content: '';
@@ -324,14 +325,24 @@ blockquote p{
 }
 
 .logo_aloe{
-		position: relative;
-		float: right;
+		position: absolute;
+		top:0.01vh;
+		margin: 0px;
+		padding: 0px;
  		width: 3.2vh;
  		border: none;
+		left: 11.2vmin;
 }
 
 .title{
-	position: relative;
+	position: absolute;
+	top: 0.01vh;
+	margin: 0px;
+	width: 1px;
+	padding: 0px;
+	font-size: 3vh;
+	color: white;
+	left: 4.2vmin;
 }
 
 .sociallogo img{
