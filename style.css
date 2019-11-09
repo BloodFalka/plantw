@@ -134,10 +134,14 @@ a:hover
 .sub_menu{
 	position: relative;
 	padding: 0;
-	display: none;
 	list-style: none;
 	text-align: left;
 	padding-left: 4.5vw;
+	overflow: hidden;
+	max-height:0vw;
+	-webkit-transition:max-height 0.4s linear;
+	-moz-transition:max-height 0.4s linear;
+	transition:max-height 0.5s linear;
 }
 .sub_menu_item{
 	display: block;
@@ -154,7 +158,7 @@ a:hover
 }
 
 ul.menu_box > li:hover > ul.sub_menu{
-	transition-duration: .35s;
+	max-height:6vw;
 	display: block;
 }
 
@@ -224,7 +228,7 @@ ul.menu_box > li:hover > ul.sub_menu{
   transition-duration: .35s;
 }
 .menu_box {
-  transition-duration: .35s;
+  transition-duration: .45s;
 }
 .menu_item {
   transition-duration: .35s;
