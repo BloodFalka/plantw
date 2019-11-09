@@ -42,7 +42,13 @@ main{
 	width: 89%;
 	border: 0.1vw dotted white;
 	text-align: center;
-	height: 57vw;
+}
+article img{
+	width: 30%;
+}
+
+.content_img{
+	margin
 }
 
 article >.cactus{
@@ -53,6 +59,14 @@ article >.cactus{
 article >.ajahuaska{
 	width: 50%;
 	float:left;
+}
+
+article >.snake_plant{
+	clear: both;
+	width:70%;
+	position: relative;
+	left: 15%;
+	border: 2px solid red;
 }
 
 footer{
@@ -209,7 +223,7 @@ img{
 	margin-top: 0.5vw;
 }
 
-b, em{
+b, em, article em{
 	color: #CCFFF1;
 }
 
