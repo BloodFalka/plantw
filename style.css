@@ -86,7 +86,6 @@ footer{
 	margin-bottom: 0.5vh;
 	background-color: rgba(255,250,205, 0.55);
 	width: 99%;
-	height: 10vh;
 	border: 0.1vw solid white;
 	border-radius: 0.5vw;
 }
@@ -113,7 +112,7 @@ a:hover
   width: 16%;
   height: 100%;
   margin: 0;
-  padding: 2vw 0;
+  padding: 5vh 0;
   list-style: none;
   text-align: center;
   background-color: #CCFFF1;
@@ -149,7 +148,7 @@ a:hover
 }
 .sub_menu_item{
 	display: block;
-  padding: 0.15vw 0.24vw;
+  padding: 3% 12%;
   color: rgba(17, 119, 51, 0.8);
   font-family: 'Roboto', sans-serif;
   font-size: 1.3vw;
@@ -319,7 +318,7 @@ blockquote {
 }
 
 blockquote p{
-		margin-top: 1vh;
+		margin-top: 0.5vmin;
     color: #979797;
     font-size: 0.9vw;
 }
@@ -327,31 +326,17 @@ blockquote p{
 .logo_aloe{
 		position: relative;
 		float: right;
-		padding: 0;
-		right: 0vw;
-		margin: 0;
- 		top: 0vw;
- 		width:1.3vw;
+ 		width: 3.2vh;
  		border: none;
 }
 
 .title{
 	position: relative;
-	float: right;
-	right: 3.7vw;
-	width: 10%;;
 }
 
 .sociallogo img{
 	position: relative;
-	width: 4vmax;
+	width: 3vmax;
 	border: none;
 	left: 50%;
-	margin: 0;
-}
-
-.sociallogo p{
-	left: 46.5%;
-	color: #6B8E23;
-	font-weight: 600;
 }
