@@ -15,43 +15,46 @@ header {
 		background-color: rgba(255, 192, 203, 1);
 		border: 0.1vw solid white;
 		border-radius: 0.2vw;
-		height: 1.5vw;
+		height: 3.2vh;
 		width: 99%;
 		font-size: 2vw;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		font-weight:bold;
 		color:white;
 		margin-left: 0.4vw;
-		margin-top: 0.01vw;
+		margin-top: 0.01%;
 		margin-right: 2vw;
 }
 
 aside{
 	position: relative;
-	margin-top: 1.7vw;
+	margin-top: 2.7vh;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-color: rgba(111, 211, 151, 0.52);
 	float:left;
-	width: 10%;
 	border: 0.1vw solid white;
 	border-radius: 0.5vw;
 	text-align: center;
-	height: 57vw;
+	width: 15%;
 }
 
 main{
 	float:right;
 	position: relative;
-	margin-top: 1.7vw;
+	margin-top: 2.7vh;
 	background-color: rgba(135, 206, 235, 0.7);
-	width: 89%;
+	width: 84%;
 	border-radius: 0.5vw;
 	border: 0.1vw solid white;
 	text-align: center;
 	padding-bottom: 2vw;
 }
 article img{
-	width: 30%;
+	width: 50%;
+}
+
+.snake_plant > img{
+	width: 50%;
 }
 
 .content_img{
@@ -79,10 +82,11 @@ footer{
 	position: relative;
 	float: left;
 	clear:both;
-	margin-top: 0.5vw;
-	margin-bottom: 0.5vw;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
 	background-color: rgba(255,250,205, 0.55);
 	width: 99%;
+	height: 10vh;
 	border: 0.1vw solid white;
 	border-radius: 0.5vw;
 }
@@ -106,7 +110,7 @@ a:hover
   visibility: hidden;
   top: 0;
   left: -100%;
-  width: 13vw;
+  width: 16%;
   height: 100%;
   margin: 0;
   padding: 2vw 0;
@@ -244,7 +248,7 @@ h1{
 }
 p{
 		position: relative;
-		font-size: 1vw;
+		font-size: 1.3vw;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		width: 50%;
 		left: 25%;
@@ -279,18 +283,18 @@ aside img{
 }
 
 aside p {
-	font-size: 0.5vw;
+	font-size: 1vw;
 	text-align: center;
 	margin-left: 0.15vw;
 	margin-right: 0.5vw;
-	margin-bottom: 0.4vw;
+	margin-bottom: 0.4vw
 }
 
 h2{
 	color: #6B8E23;
 	margin-top: 0.1vw;
 	margin-bottom: 0px;
-	font-size: 1vw;
+	font-size: 1.5vw;
 }
 
 aside h1{
@@ -302,20 +306,22 @@ blockquote {
     border-top: 0.1vw dashed white;
     color: #878787;
     font-family: Georgia,serif;
-    font-size: 0.5vw;
+    font-size: 0.8vw;
     font-style: italic;
-    line-height: 0.74vw;
+    line-height: 1em;
     position: relative;
     text-align: right;
-		margin-bottom: 0.5vw;
-		margin-top: 0.1vw;
+		margin-bottom: 2vh;
+		margin-top: 1vh;
 		margin-left: 0.5vw;
 		margin-right: 0.5vw;
+		padding-bottom: 1vh;
 }
 
 blockquote p{
+		margin-top: 1vh;
     color: #979797;
-    font-size: 0.6vw;
+    font-size: 0.9vw;
 }
 
 .logo_aloe{
@@ -333,19 +339,19 @@ blockquote p{
 	position: relative;
 	float: right;
 	right: 3.7vw;
-	top:0.2vw;
+	width: 10%;;
 }
 
 .sociallogo img{
 	position: relative;
-	width:3vw;
+	width: 4vmax;
 	border: none;
 	left: 50%;
 	margin: 0;
 }
 
 .sociallogo p{
-	left: 48%;
+	left: 46.5%;
 	color: #6B8E23;
 	font-weight: 600;
 }
