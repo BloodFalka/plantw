@@ -13,11 +13,11 @@ header {
 		top:0px;
 		position: fixed;
 		background-color: rgba(255, 192, 203, 1);
-		border: 0.1vw solid white;
+		border: 0.05em solid white;
 		border-radius: 0.2vw;
 		height: 3.2vh;
 		width: 99%;
-		font-size: 2vw;
+		font-size: 3vh;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		font-weight:bold;
 		color:white;
@@ -32,7 +32,7 @@ aside{
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-color: rgba(111, 211, 151, 0.52);
 	float:left;
-	border: 0.1vw solid white;
+	border: 0.1em solid white;
 	border-radius: 0.5vw;
 	text-align: center;
 	width: 15%;
@@ -43,9 +43,9 @@ main{
 	position: relative;
 	margin-top: 3.3vh;
 	background-color: rgba(135, 206, 235, 0.7);
-	width: 84%;
+	width: 83%;
 	border-radius: 0.5vw;
-	border: 0.1vw solid white;
+	border: 0.1em solid white;
 	text-align: center;
 	padding-bottom: 2vw;
 }
@@ -86,7 +86,7 @@ footer{
 	margin-bottom: 0.5vh;
 	background-color: rgba(255,250,205, 0.55);
 	width: 99%;
-	border: 0.1vw solid white;
+	border: 0.1em solid white;
 	border-radius: 0.5vw;
 }
 
@@ -171,14 +171,15 @@ ul.menu_box > li:hover > ul.sub_menu{
 }
 /* стилизуем кнопку */
 .menu_btn {
-  display: flex; /* используем flex для центрирования содержимого */
   align-items: center;  /* центрируем содержимое кнопки */
   position: relative;
 	float: left;
-	margin: 0.1vw 0.1vw 0vw 0.6vw;
+	margin-top: 0.45vh;
+	margin-bottom: 0.3vh;
+	margin-left: 1vmax;
 	padding: 0;
-  width: 1.5vw;
-	height: 1.5vw;
+  width: 1em;
+	height: 0.8em;
   cursor: pointer;
   z-index: 1;
 }
@@ -188,24 +189,23 @@ ul.menu_box > li:hover > ul.sub_menu{
 .menu_btn > span::after {
   display: block;
   position: absolute;
-  width: 1vw;
-  height: 0.15vw;
+  width: 100%;
+  height: 0.2vh;
   background-color: white;
 	z-index: 1;
 }
 .menu_btn > span {
   content: '';
-  top: 0.5vw;
+  top: 0.3em;
 }
 
 .menu_btn > span::before {
   content: '';
-  top: -0.35vw;
+  top: -0.3em;
 }
 .menu_btn > span::after {
   content: '';
-  top: 0.3vw;
-	height: 0.2vw;
+  top: 0.3em;
 }
 #menu_toggle:checked ~ .menu_btn > span {
   transform: rotate(45deg);
@@ -324,30 +324,27 @@ blockquote p{
     font-size: 0.9vw;
 }
 
-.logo_aloe{
-		position: absolute;
-		top:0.01vh;
-		margin: 0px;
-		padding: 0px;
- 		width: 3.2vh;
- 		border: none;
-		left: 11.2vmin;
-}
-
-.title{
-	position: absolute;
-	top: 0.01vh;
-	margin: 0px;
-	width: 1px;
-	padding: 0px;
-	font-size: 3vh;
-	color: white;
-	left: 4.2vmin;
-}
-
 .sociallogo img{
 	position: relative;
 	width: 3vmax;
 	border: none;
 	left: 50%;
+}
+
+#logo img{
+	position:sticky;
+	border: none;
+	width: 3.2vh;
+	margin: 0px;
+	padding: 0px;
+	float: right;
+}
+
+#logo h2{
+	position:sticky;
+	font-size: 3vh;
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	float: right;
 }
