@@ -312,9 +312,11 @@ aside h1{
 	color:tomato;
 }
 
+aside section{
+	  border-bottom: 0.1vw dashed white;
+}
+
 blockquote {
-    border-bottom: 0.1vw dashed white;
-    border-top: 0.1vw dashed white;
     color: #878787;
     font-family: Georgia,serif;
     font-size: 0.8vw;
