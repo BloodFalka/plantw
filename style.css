@@ -52,7 +52,7 @@ footer{
 	clear:both;
 	margin-top: 0.5vh;
 	margin-bottom: 0.5vh;
-	background-color: rgba(255,250,205, 0.55);
+	background-color: rgba(255,250,205, 0.8);
 	width: 99%;
 	border-radius: 0.5vw;
 }
@@ -80,6 +80,7 @@ article >.snake_plant{
 	width:70%;
 	position: relative;
 	left: 15%;
+	margin-bottom: 1vmin;
 }
 
 article >.green_flat{
@@ -94,6 +95,7 @@ article >.big_leaf{
 
 .green_flat > img{
 	width: 70%;
+	margin-top: 2vw;
 }
 
 .big_leaf > img{
@@ -249,7 +251,7 @@ ul.menu_box > li:hover > ul.sub_menu{
   transition-duration: .35s;
 }
 
-h1{
+h2{
 		text-align: center;
 		color: white;
 		font-size: 2vw;
@@ -261,10 +263,29 @@ p{
 		position: relative;
 		font-size: 1.3vw;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		width: 50%;
-		left: 25%;
+		text-align: center;
 		margin-top: 0.1vw;
 		margin-bottom: 0.1vw;
+		padding-left: 3vw;
+		padding-right: 3vw;
+}
+
+section ul{
+		font-size: 1.3vw;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		margin-top: 0.1vw;
+		text-align: justify;
+		margin-bottom: 0.1vw;
+		padding-left: 8.5vw;
+		padding-right: 3vw;
+}
+
+section ul span{
+		color: black;
+}
+
+section li{
+	color: #CCFFF1;
 }
 
 img{
@@ -274,11 +295,12 @@ img{
 	margin-top: 0.5vw;
 }
 
-b, em, article em{
+b, em, article em, i{
 	color: #CCFFF1;
+	font-weight: 600;
 }
 
-aside b, em{
+aside b, aside em, aside i{
 	color: #6B8E23;
 	font-weight: 600;
 }
@@ -301,14 +323,14 @@ aside p {
 	margin-bottom: 0.4vw
 }
 
-h2{
+h3{
 	color: #6B8E23;
 	margin-top: 0.1vw;
 	margin-bottom: 0px;
 	font-size: 1.5vw;
 }
 
-aside h1{
+aside h2{
 	color:tomato;
 }
 
@@ -354,7 +376,7 @@ blockquote p{
 	float: right;
 }
 
-#logo h2{
+#logo h1{
 	position:sticky;
 	font-size: 3vh;
 	margin: 0px;
