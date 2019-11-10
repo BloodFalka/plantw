@@ -335,7 +335,8 @@ h3{
 }
 
 aside h2, #main_title{
-	color:tomato;
+	color: #ffc1d8;
+	text-shadow: 0em 0em 0.4em #F08080;
 }
 
 aside section{
