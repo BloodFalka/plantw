@@ -1,9 +1,8 @@
 html,
 body {
 		background-image: url(img/backgrounds/brick.jpg); /* Путь к фоновому рисунку */
-		background-position:center; /* Положение фона */
-		background-repeat: no-repeat; /* Отменяем повторение фона */
-		background-color: pink;
+		background-repeat: repeat-y; /* Отменяем повторение фона */
+		background-color: #ffc1d8;
 		background-size: 100%;
 		background-attachment: fixed;
 }
@@ -13,10 +12,9 @@ header {
 		top:0px;
 		position: fixed;
 		background-color: rgba(255, 192, 203, 1);
-		border: 0.05em solid white;
 		border-radius: 0.2vw;
 		height: 3.2vh;
-		width: 99%;
+		width: 100%;
 		font-size: 3vh;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		font-weight:bold;
@@ -28,11 +26,10 @@ header {
 
 aside{
 	position: relative;
-	margin-top: 3.3vh;
+	margin-top: 3.1vh;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-color: rgba(111, 211, 151, 0.8);
 	float:left;
-	border: 0.1em solid white;
 	border-radius: 0.5vw;
 	text-align: center;
 	width: 15%;
@@ -41,19 +38,26 @@ aside{
 main{
 	float:right;
 	position: relative;
-	margin-top: 3.3vh;
+	margin-top: 3.1vh;
 	background-color: rgba(135, 206, 235, 0.8);
 	width: 83%;
 	border-radius: 0.5vw;
-	border: 0.1em solid white;
 	text-align: center;
 	padding-bottom: 2vw;
 }
-article img{
-	width: 50%;
+
+footer{
+	position: relative;
+	float: left;
+	clear:both;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+	background-color: rgba(255,250,205, 0.55);
+	width: 99%;
+	border-radius: 0.5vw;
 }
 
-.snake_plant > img{
+article img{
 	width: 50%;
 }
 
@@ -78,16 +82,22 @@ article >.snake_plant{
 	left: 15%;
 }
 
-footer{
-	position: relative;
+article >.green_flat{
 	float: left;
-	clear:both;
-	margin-top: 0.5vh;
-	margin-bottom: 0.5vh;
-	background-color: rgba(255,250,205, 0.55);
-	width: 99%;
-	border: 0.1em solid white;
-	border-radius: 0.5vw;
+	width:50%;
+}
+
+article >.big_leaf{
+	float: right;
+	width:50%;
+}
+
+.green_flat > img{
+	width: 70%;
+}
+
+.big_leaf > img{
+	width: 70%;
 }
 
 a
@@ -337,6 +347,7 @@ blockquote p{
 	border: none;
 	width: 3.2vh;
 	margin: 0px;
+	margin-right: 1%;
 	padding: 0px;
 	float: right;
 }
