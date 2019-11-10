@@ -109,12 +109,12 @@ a:hover
   visibility: hidden;
   top: 0;
   left: -100%;
-  width: 17%;
+  width: 17vmax;
   height: 100%;
   margin: 0;
   padding: 1.7em 0;
   list-style: none;
-  text-align: center;
+  text-align: left;
   background-color: #CCFFF1;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 }
@@ -122,11 +122,12 @@ a:hover
 /* элементы меню */
 .menu_item {
   display: block;
-  padding: 0.5vw 0.24vw;
+	padding-left: 3.5vmax;
   color: #173;
   font-family: 'Roboto', sans-serif;
   font-size: 2vmax;
   font-weight: 600;
+	line-height: 2em;
   text-decoration: none;
 }
 
@@ -139,7 +140,7 @@ a:hover
 	padding: 0;
 	list-style: none;
 	text-align: left;
-	padding-left: 4.5vw;
+	padding-left: 3.5vmax;
 	overflow: hidden;
 	max-height:0vw;
 	-webkit-transition:max-height 0.4s linear;
@@ -161,7 +162,7 @@ a:hover
 }
 
 ul.menu_box > li:hover > ul.sub_menu{
-	max-height:7vmax;
+	max-height:7.5vmax;
 	display: block;
 }
 
