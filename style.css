@@ -1,6 +1,6 @@
 html,
 body {
-		background-image: url(img/backgrounds/main_b/g.jpg); /* Путь к фоновому рисунку */
+		background-image: url(img/backgrounds/brick.jpg); /* Путь к фоновому рисунку */
 		background-position:center; /* Положение фона */
 		background-repeat: no-repeat; /* Отменяем повторение фона */
 		background-color: pink;
@@ -30,7 +30,7 @@ aside{
 	position: relative;
 	margin-top: 3.3vh;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	background-color: rgba(111, 211, 151, 0.52);
+	background-color: rgba(111, 211, 151, 0.8);
 	float:left;
 	border: 0.1em solid white;
 	border-radius: 0.5vw;
@@ -42,7 +42,7 @@ main{
 	float:right;
 	position: relative;
 	margin-top: 3.3vh;
-	background-color: rgba(135, 206, 235, 0.7);
+	background-color: rgba(135, 206, 235, 0.8);
 	width: 83%;
 	border-radius: 0.5vw;
 	border: 0.1em solid white;
@@ -109,10 +109,10 @@ a:hover
   visibility: hidden;
   top: 0;
   left: -100%;
-  width: 16%;
+  width: 17%;
   height: 100%;
   margin: 0;
-  padding: 5vh 0;
+  padding: 1.7em 0;
   list-style: none;
   text-align: center;
   background-color: #CCFFF1;
@@ -125,7 +125,7 @@ a:hover
   padding: 0.5vw 0.24vw;
   color: #173;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5vw;
+  font-size: 2vmax;
   font-weight: 600;
   text-decoration: none;
 }
@@ -151,7 +151,7 @@ a:hover
   padding: 3% 12%;
   color: rgba(17, 119, 51, 0.8);
   font-family: 'Roboto', sans-serif;
-  font-size: 1.3vw;
+  font-size: 1.5vmax;
   font-weight: 600;
   text-decoration: none;
 }
@@ -161,7 +161,7 @@ a:hover
 }
 
 ul.menu_box > li:hover > ul.sub_menu{
-	max-height:6vw;
+	max-height:7vmax;
 	display: block;
 }
 
@@ -311,11 +311,11 @@ blockquote {
     line-height: 1em;
     position: relative;
     text-align: right;
-		margin-bottom: 2vh;
-		margin-top: 1vh;
+		margin-bottom: 1em;
+		margin-top: 1em;
 		margin-left: 0.5vw;
 		margin-right: 0.5vw;
-		padding-bottom: 1vh;
+		padding-bottom: 1em;
 }
 
 blockquote p{
