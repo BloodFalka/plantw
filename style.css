@@ -305,6 +305,10 @@ aside b, aside em, aside i{
 	font-weight: 600;
 }
 
+#read_more{
+	color: purple;
+}
+
 aside img{
 	margin-top: 0.1vw;
 	margin-left: 0.5vw;
@@ -330,7 +334,7 @@ h3{
 	font-size: 1.5vw;
 }
 
-aside h2{
+aside h2, #main_title{
 	color:tomato;
 }
 
