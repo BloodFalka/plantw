@@ -257,7 +257,7 @@ h2{
 		font-size: 2vw;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		margin-bottom: 0px;
-		margin-top: 0.2vw;
+		margin-top: 0.3vw;
 }
 p{
 		position: relative;
@@ -265,7 +265,7 @@ p{
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		text-align: center;
 		margin-top: 0.1vw;
-		margin-bottom: 0.1vw;
+		margin-bottom: 1em;
 		padding-left: 3vw;
 		padding-right: 3vw;
 }
@@ -293,6 +293,7 @@ img{
 	border: 0.15vw solid green;
 	border-radius: 1vw;
 	margin-top: 0.5vw;
+	margin-bottom: 1vw;
 }
 
 b, em, article em, i{
@@ -383,9 +384,10 @@ blockquote p{
 
 #logo h1{
 	position:sticky;
-	font-size: 3vh;
+	font-size: 2.5vh;
 	margin: 0px;
 	padding: 0px;
 	color: white;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	float: right;
 }
