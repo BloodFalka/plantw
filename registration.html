@@ -1,36 +1,39 @@
-<!DOCTYPE=HTML>
-<html lang="ua, en">
+<!DOCTYPE html>
+<html lang="uk">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/style.css">
 		<title>PlantW</title>
 		<link rel="shortcut icon" href="img/small/title_aloe.png">
 	</head>
 		<body>
 			<header>
-
+				<div id="logo">
+					<img class="logo_aloe" src="img/small/title_aloe.png" alt="LOGO">
+					<h1 class="logo_title">Plant<span style="display:none">W</span></h1>
+				</div>
+				<nav>
 				<div class="hamburger-menu">
 					  <input id="menu_toggle" type="checkbox" />
 					  <label class="menu_btn" for="menu_toggle">
 					    <span></span>
 					  </label>
 					<ul class="menu_box">
-						<li><a class="menu_item" href="">Головна</a></li>
-						<li><a class="menu_item" id="sub_open" href="">Види</a>
-
-							<!--ul class="sub_menu_box">
-								<li><a class="sub_menu_item" href="HT.html">Сукуленти</a></li>
-								<li><a class="sub_menu_item" href="HT.html">Кактуси</a></li>
-								<li><a class="sub_menu_item" href="HT.html">Рослини</a></li>
-							</ul>-->
-
+						<li><a class="menu_item" href="#">Головна</a></li>
+						<li><a class="menu_item sub_open" href="#" >Види</a>
+							<ul class="sub_menu" >
+								<li><a class="sub_menu_item" href="#">Кактуси</a></li>
+								<li><a class="sub_menu_item" href="#">Сукуленти</a></li>
+								<li><a class="sub_menu_item" href="#">Рослинки</a></li>
+							</ul>
 						</li>
-						<li><a class="menu_item" href="">Догляд</a></li>
+						<li><a class="menu_item" href="#">Догляд</a></li>
 						<li><a class="menu_item" href="registration.html">Реєстрація</a></li>
 					</ul>
 				</div>
+			</nav>
 			</header>
-				<article>
+				<main>
 					<form class="form" action="HT.html">
 						<p>Login: <input name="login" required></p>
 						<p>Password: <input type="password" name="login" required></p>
@@ -40,7 +43,7 @@
 						<p><input type="radio" name="gender" value="No-Binary">No-Binary</p>
 						<p><input type="submit"></p>
 					</form>
-				</article>
+				</main>
 				<aside>
 				</aside>
 				<footer>
