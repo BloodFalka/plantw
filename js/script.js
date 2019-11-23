@@ -29,7 +29,7 @@ var bullingWord = bullingWords[Math.floor(Math.random() * bullingWords.length)];
 
 var badWord = ["Твій", bullingObject, bulling, bullingWord + "!!!"].join(" ");
 
-console.log(badWord);
+alert(badWord);
 
 var name = [
 "Антоні Улай",
