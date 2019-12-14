@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //МАТЮКИ
 var bullingObjects = [
 	"Бізнес",
@@ -6,31 +7,19 @@ var bullingObjects = [
 	"Палець",
 	"Браслет"
 ];
+=======
+function chooseRandom(words){
+	return words[Math.floor(Math.random()* words.length)]};
+>>>>>>> 24d3b372f92bb986f9c9a58bba33f8b27dc42444
 
-var bullings = [
-	"Смердючий",
-	"Гівняний",
-	"Прищавий",
-	"Гнилий",
-	"Хуйоватий",
-	"Їбаний"
-];
+var bullingObjects = [ "Бізнес", "Ніс", "Батько", "Палець", "Браслет"];
+var bullings = ["Смердючий", "Гівняний", "Прищавий", "Гнилий", "Хуйоватий", "Їбаний"];
+var bullingWords = ["Член", "Кіт", "Хомяк", "Тінейджер", "Морозильник"];
 
-var bullingWords = [
-	"Член",
-	"Кіт",
-	"Хомяк",
-	"Тінейджер",
-	"Морозильник"
-];
-
-var bullingObject = bullingObjects[Math.floor(Math.random()* bullingObjects.length)];
-var bulling = bullings[Math.floor(Math.random() * bullings.length)];
-var bullingWord = bullingWords[Math.floor(Math.random() * bullingWords.length)];
-
-var badWord = ["Твій", bullingObject, bulling, bullingWord + "!!!"].join(" ");
+var badWord = ["Твій", chooseRandom(bullingObjects), chooseRandom(bullings), chooseRandom(bullingWords) + "!!!"].join(" ");
 
 alert(badWord);
+<<<<<<< HEAD
 
 //ПРИВІТАННЯ
 var name = "Naz"
@@ -88,3 +77,5 @@ for (var i = 0; i < input.length; i++) {
 };
 
 console.log(output);
+=======
+>>>>>>> 24d3b372f92bb986f9c9a58bba33f8b27dc42444
