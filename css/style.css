@@ -6,6 +6,12 @@ body {
 		background-size: 100%;
 		background-attachment: fixed;
 }
+
+::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    background: transparent;  /* опционально */
+}
+
 header {
 		z-index: 1;
 		left:0px;
@@ -33,6 +39,8 @@ aside{
 	border-radius: 0.5vw;
 	text-align: center;
 	width: 15%;
+	height: 88vh;
+	overflow: scroll
 }
 
 main{
@@ -43,7 +51,8 @@ main{
 	width: 83%;
 	border-radius: 0.5vw;
 	text-align: center;
-	padding-bottom: 2vw;
+	height: 88vh;
+	overflow: scroll
 }
 
 footer{
@@ -55,6 +64,11 @@ footer{
 	background-color: rgba(255,250,205, 0.8);
 	width: 99%;
 	border-radius: 0.5vw;
+	height: 6vh;
+}
+
+#scrool{
+
 }
 
 article img{
@@ -371,7 +385,8 @@ blockquote p{
 
 .sociallogo img{
 	position: relative;
-	width: 3vmax;
+	height: 4vh;
+	width: 4vh;
 	border: none;
 	left: 50%;
 }
