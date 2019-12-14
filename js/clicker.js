@@ -66,7 +66,7 @@ function dpsEarn(){
   if (dps > 0) {
     currentHealth -= dps;
     if (currentHealth <= 0) {
-      $("#enemyImg").fadeOut(500).fadeIn(500);
+      $("#enemyImg").fadeOut(200).fadeIn(200);
       enemy.killedCount += 1;
       enemy.stageKilledCount += 1;
       enemy.maxHealth = random(10*enemyHealthMultipler)+10*enemyHealthMultipler;
@@ -88,7 +88,7 @@ function dpsEarn(){
 function clickHandlerEnemy(){
   currentHealth -= dpc;
   if (currentHealth <= 0) {
-    $("#enemyImg").fadeOut(500).fadeIn(500);
+    $("#enemyImg").fadeOut(200).fadeIn(200);
     enemy.killedCount += 1;
     enemy.stageKilledCount += 1;
     enemy.maxHealth = random(10*enemyHealthMultipler)+10*enemyHealthMultipler;
