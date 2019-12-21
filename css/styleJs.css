@@ -401,7 +401,7 @@ blockquote p{
 
 #gold{
 	display: inline-block;
-	width: 60%;
+	width: 70%;
 	float: right;
 	clear: right;
 	color: #FFFF33;
@@ -438,12 +438,13 @@ blockquote p{
 }
 
 #settings{
-	display: inline;
+	position: absolute;
+	left: 90vw;
 	border: none;
 	width: 6.5vh;
 	margin-top: -0.5vh;
 	margin-bottom: 0vh;
-	float: right;
+	margin-right: 1vw;
 	cursor: pointer;
 }
 
@@ -480,4 +481,13 @@ blockquote p{
 .settingsOption{
 	font-size: 2vmax;
 	margin-top: 2vh;
+}
+
+#enemyName{
+	position: fixed;
+	left: 61%;
+	top: 90%;
+	text-align: center;
+	color: #6B8E23;
+	font-size: 2vmax;
 }

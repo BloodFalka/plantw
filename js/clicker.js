@@ -2,6 +2,8 @@ var settings = {
   language : "enLanguage"
 };
 
+var enemyImage = ["aloe", "cactus", "mandragora", "golem"];
+
 var gold = 0;
 var goldMultipler = 1;
 
@@ -71,9 +73,10 @@ function dpsEarn(){
   if (dps > 0) {
     currentHealth -= dps;
     if (currentHealth <= 0) {
-      $("#enemyImg").fadeOut(200).fadeIn(200);
+      $("#enemyImg").fadeOut(200).fadeIn(100);
       enemy.killedCount += 1;
       enemy.stageKilledCount += 1;
+      $("#enemyImg").attr("src", "img/clicker/" + enemyImage[random(enemyImage.length)] + ".png");
       enemy.maxHealth = random(10*enemyHealthMultipler)+10*enemyHealthMultipler;
       currentHealth = enemy.maxHealth;
       gold += goldMultipler * (stage*1.08);
@@ -81,7 +84,7 @@ function dpsEarn(){
     if (enemy.stageKilledCount == 10){
       enemy.stageKilledCount = 0
       stage++;
-      enemyHealthMultipler *= 1.1;
+      enemyHealthMultipler *= 1.15;
     };
     refreshGame();
     enemyAnimation();
@@ -93,9 +96,10 @@ function dpsEarn(){
 function clickHandlerEnemy(){
   currentHealth -= dpc;
   if (currentHealth <= 0) {
-    $("#enemyImg").fadeOut(200).fadeIn(200);
+    $("#enemyImg").fadeOut(200).fadeIn(100);
     enemy.killedCount += 1;
     enemy.stageKilledCount += 1;
+    $("#enemyImg").attr("src", "img/clicker/" + enemyImage[random(enemyImage.length)] + ".png");
     enemy.maxHealth = random(10*enemyHealthMultipler)+10*enemyHealthMultipler;
     currentHealth = enemy.maxHealth;
     gold += goldMultipler * (stage*1.08);
@@ -103,7 +107,7 @@ function clickHandlerEnemy(){
   if (enemy.stageKilledCount == 10){
     enemy.stageKilledCount = 0
     stage++;
-    enemyHealthMultipler *= 1.1;
+    enemyHealthMultipler *= 1.15;
   };
   /*if ((stage % 5) && (enemy.stageKilledCount !== 9)) {
   }else {
@@ -130,10 +134,10 @@ function random(size){
 function refreshGame(){
   if (settings.language === "enLanguage") {
 
-    $("#gold").text("Gold: " + Math.floor(gold));
+    $("#gold").html("Gold: " + Math.floor(gold));
 
-    $("#dpc").text("DPC: " + Math.floor(dpc));
-    $("#dps").text("DPS: " + Math.floor(dps));
+    $("#dpc").html("DPC: " + Math.floor(dpc));
+    $("#dps").html("DPS: " + Math.floor(dps));
 
     $("#sword").html("Sword </br>" + Math.floor(sword.cost) + " coins" +" (+" + Math.floor(sword.damageMultipler) + " DPC) </br>" + "Owned "+ sword.ownedCount);
 
@@ -144,15 +148,17 @@ function refreshGame(){
     $("#nazar").html("Nazar </br>" + Math.floor(nazar.cost / 1000) + "K coins" + " (+" + Math.floor(nazar.damageMultipler) + " DPS) </br>" + "Owned " + nazar.ownedCount);
     $("#olia").html("Oliasha </br>" + Math.floor(olia.cost / 1000) + "K coins" + " (+" + Math.floor(olia.damageMultipler) + " DPS) </br>" + "Owned " + olia.ownedCount);
 
-    $("#enemyHealth").text("Health: " + rounded(currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
-    $("#killedCount").text(enemy.stageKilledCount + "/" + 10);
-    $("#stage").text("STAGE: " + stage)
+    $("#enemyHealth").html("Health: " + rounded(currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
+    $("#enemyName").html(enemyImage[1].toUpperCase());
+
+    $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
+    $("#stage").html("STAGE: " + stage)
   }else if (settings.language === "ukLanguage") {
 
-    $("#gold").text("Золота: " + Math.floor(gold));
+    $("#gold").html("Золота: " + Math.floor(gold));
 
-    $("#dpc").text("DPC: " + Math.floor(dpc));
-    $("#dps").text("DPS: " + Math.floor(dps));
+    $("#dpc").html("DPC: " + Math.floor(dpc));
+    $("#dps").html("DPS: " + Math.floor(dps));
 
     $("#sword").html("Меч </br>" + Math.floor(sword.cost) + " монеток" +" (+" + Math.floor(sword.damageMultipler) + " DPC) </br>" + "Куплено "+ sword.ownedCount);
 
@@ -163,15 +169,15 @@ function refreshGame(){
     $("#nazar").html("Назарій </br>" + Math.floor(nazar.cost / 1000) + "K монеток" + " (+" + Math.floor(nazar.damageMultipler) + " DPS) </br>" + "Куплено " + nazar.ownedCount);
     $("#olia").html("Оляша </br>" + Math.floor(olia.cost / 1000) + "K монеток" + " (+" + Math.floor(olia.damageMultipler) + " DPS) </br>" + "Куплено " + olia.ownedCount);
 
-    $("#enemyHealth").text("Здоров\'я: " + rounded(currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
-    $("#killedCount").text(enemy.stageKilledCount + "/" + 10);
-    $("#stage").text("Рівень: " + stage)
+    $("#enemyHealth").html("Здоров\'я: " + rounded(currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
+    $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
+    $("#stage").html("РІВЕНЬ: " + stage)
   }else if (settings.language === "ruLanguage") {
 
-    $("#gold").text("Золота: " + Math.floor(gold));
+    $("#gold").html("Золота: " + Math.floor(gold));
 
-    $("#dpc").text("DPC: " + Math.floor(dpc));
-    $("#dps").text("DPS: " + Math.floor(dps));
+    $("#dpc").html("DPC: " + Math.floor(dpc));
+    $("#dps").html("DPS: " + Math.floor(dps));
 
     $("#sword").html("Меч </br>" + Math.floor(sword.cost) + " монеток" +" (+" + Math.floor(sword.damageMultipler) + " DPC) </br>" + "Куплено "+ sword.ownedCount);
 
@@ -182,9 +188,9 @@ function refreshGame(){
     $("#nazar").html("Назарей </br>" + Math.floor(nazar.cost / 1000) + "K монеток" + " (+" + Math.floor(nazar.damageMultipler) + " DPS) </br>" + "Куплено " + nazar.ownedCount);
     $("#olia").html("Аляша </br>" + Math.floor(olia.cost / 1000) + "K монеток" + " (+" + Math.floor(olia.damageMultipler) + " DPS) </br>" + "Куплено " + olia.ownedCount);
 
-    $("#enemyHealth").text("Здоровля: " + rounded(currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
-    $("#killedCount").text(enemy.stageKilledCount + "/" + 10);
-    $("#stage").text("Уровень: " + stage)
+    $("#enemyHealth").html("Здоровля: " + rounded(currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
+    $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
+    $("#stage").html("УРОВЕНЬ: " + stage)
   };
 };
 
@@ -194,8 +200,11 @@ var enemyLeftPos = $("#enemyImg").offset().left;
 function enemyAnimation(){
   $("#enemyImg").css({"paddingTop": "+10px"});
   $("#enemyImg").css({"paddingLeft": "+10px"});
-  $("#enemyImg").css({"paddingTop": "-10px"});
-  $("#enemyImg").css({"paddingLeft": "-10px"});
+  setTimeout(function () {
+    $("#enemyImg").css({"paddingTop": "-10px"});
+    $("#enemyImg").css({"paddingLeft": "-10px"});
+  }, 20);
+
   //var enemy = $("#enemyImg");
   //$("#enemyImg").offset({left: enemyLeftPos + 20, top: enemyTopPos - 20});
   //$("#enemyImg").offset({left: enemyLeftPos, top: enemyTopPos});
@@ -223,13 +232,16 @@ function clickHandlerShopAuto(hero){
   }else {
     alert("You need " + Math.floor(hero.cost - gold) + " more coins");
   };
+  if (hero.ownedCount = 10) {
+    hero.damageMultipler *=2;
+  };
 };
 
 $
 setInterval(dpsEarn, 1000);
 
 $(function(){
-  $("main").click(clickHandlerEnemy);
+  $("main").on("click" , clickHandlerEnemy);
 
   $("#luda").click(function(){
     clickHandlerShopAuto(luda)
@@ -262,14 +274,17 @@ $(function(){
 
   $("#ukLanguage").click(function(){
     settings.language = "ukLanguage";
+    $(".settingsOption").html("Мова");
   });
 
   $("#enLanguage").click(function(){
     settings.language = "enLanguage";
+    $(".settingsOption").html("Language");
   });
 
   $("#ruLanguage").click(function(){
     settings.language = "ruLanguage";
+    $(".settingsOption").html("Язык");
   });
 
   $("#settingsMenu").hide();
