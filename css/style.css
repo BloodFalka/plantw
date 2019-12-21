@@ -39,7 +39,7 @@ aside{
 	border-radius: 0.5vw;
 	text-align: center;
 	width: 15%;
-	height: 88vh;
+	height: 87vh;
 	overflow: scroll
 }
 
@@ -51,7 +51,7 @@ main{
 	width: 83%;
 	border-radius: 0.5vw;
 	text-align: center;
-	height: 88vh;
+	height: 87vh;
 	overflow: scroll
 }
 
@@ -62,7 +62,7 @@ footer{
 	margin-top: 0.5vh;
 	margin-bottom: 0.5vh;
 	background-color: rgba(255,250,205, 0.8);
-	width: 99%;
+	width: 100%;
 	border-radius: 0.5vw;
 	height: 6vh;
 }

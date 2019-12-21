@@ -1,7 +1,7 @@
 html,
 body {
-		background-image: url(../img/backgrounds/brick.jpg); /* Путь к фоновому рисунку */
-		background-repeat: repeat-y; /* Отменяем повторение фона */
+		background-image: url(../img/backgrounds/brick.jpg); /* ÐŸÑƒÑ‚ÑŒ Ðº Ñ„Ð¾Ð½Ð¾Ð²Ð¾Ð¼Ñƒ Ñ€Ð¸ÑÑƒÐ½ÐºÑƒ */
+		background-repeat: repeat-y; /* ÐžÑ‚Ð¼ÐµÐ½ÑÐµÐ¼ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÐµÐ½Ð¸Ðµ Ñ„Ð¾Ð½Ð° */
 		background-color: #ffc1d8;
 		background-size: 100%;
 		background-attachment: fixed;
@@ -43,8 +43,8 @@ aside{
 }
 
 ::-webkit-scrollbar { /* chrome based */
-    width: 0px;  /* ширина scrollbar'a */
-    background: transparent;  /* опционально */
+    width: 0px;  /* ÑˆÐ¸Ñ€Ð¸Ð½Ð° scrollbar'a */
+    background: transparent;  /* Ð¾Ð¿Ñ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ð¾ */
 }
 
 main{
@@ -89,7 +89,7 @@ a:hover
   color: tomato;
 }
 
-/* контейнер меню */
+/* ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð¼ÐµÐ½ÑŽ */
 .menu_box {
   display: block;
   position: fixed;
@@ -106,7 +106,7 @@ a:hover
   box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* элементы меню */
+/* ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼ÐµÐ½ÑŽ */
 .menu_item {
   display: block;
 	padding-left: 3.5vmax;
@@ -157,13 +157,13 @@ ul.menu_box > li:hover > ul.sub_menu{
 	display: block;
 }
 
-/* скрываем чекбокс */
+/* ÑÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ‡ÐµÐºÐ±Ð¾ÐºÑ */
 #menu_toggle {
   opacity: 0;
 }
-/* стилизуем кнопку */
+/* ÑÑ‚Ð¸Ð»Ð¸Ð·ÑƒÐµÐ¼ ÐºÐ½Ð¾Ð¿ÐºÑƒ */
 .menu_btn {
-  align-items: center;  /* центрируем содержимое кнопки */
+  align-items: center;  /* Ñ†ÐµÐ½Ñ‚Ñ€Ð¸Ñ€ÑƒÐµÐ¼ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ ÐºÐ½Ð¾Ð¿ÐºÐ¸ */
   position: relative;
 	float: left;
 	margin-top: 0.20em;
@@ -174,7 +174,7 @@ ul.menu_box > li:hover > ul.sub_menu{
   cursor: pointer;
   z-index: 1;
 }
-/* добавляем "гамбургер" */
+/* Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ "Ð³Ð°Ð¼Ð±ÑƒÑ€Ð³ÐµÑ€" */
 .menu_btn > span,
 .menu_btn > span::before,
 .menu_btn > span::after {
@@ -401,15 +401,24 @@ blockquote p{
 
 #gold{
 	display: inline-block;
-	width: 70%;
-
+	width: 60%;
 	float: right;
 	clear: right;
 	color: #FFFF33;
 	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+	margin-top: 0.5vh;
+	font-size: 4.5vh;
+}
+
+/*#diamonds{
+	display: inline-block;
+	width: 15%;
+	float: right;
+	color: skyblue;
+	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	margin-top: 0.1vh;
 	font-size: 4vh;
-}
+}*/
 
 #enemyHealth{
 	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
@@ -422,4 +431,53 @@ blockquote p{
 	margin-top: 1.5vh;
 	margin-right: 3vw;
 	font-size: 2vmax;
+}
+
+.itemCost{
+	color: white;
+}
+
+#settings{
+	display: inline;
+	border: none;
+	width: 6.5vh;
+	margin-top: -0.5vh;
+	margin-bottom: 0vh;
+	float: right;
+	cursor: pointer;
+}
+
+#settingsMenu{
+	position: fixed;
+	width: 30vw;
+	height: 35vmin;
+	border: 2px solid white;
+	border-radius: 0.55vw;
+	background-color: rgba(111, 211, 151, 0.8);
+	left: 50%;
+	top: 30%;
+}
+
+#settingsCloseButton{
+	position: fixed;
+	cursor: pointer;
+
+	left: 78vw;
+	top: 32%;
+
+	font-size: 1.5vmax;
+}
+
+.settingsButton{
+	position: relative;
+	color: #6B8E23;
+	font-size: 1.5vmax;
+	width: 50%;
+	left: 25%;
+	margin-top: 1vh;
+}
+
+.settingsOption{
+	font-size: 2vmax;
+	margin-top: 2vh;
 }
