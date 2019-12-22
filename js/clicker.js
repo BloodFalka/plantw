@@ -42,7 +42,7 @@ function dpsEarn(){
   if (dps > 0) {
     currentEnemy.currentHealth -= dps;
     if (currentEnemy.currentHealth <= 0) {
-      $("#enemyImg").fadeOut(200).fadeIn(100);
+      $("#enemyImg").fadeOut().fadeIn();
       enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage-1));
       enemy.killedCount += 1;
       enemy.stageKilledCount += 1;
@@ -76,6 +76,9 @@ function clickHandlerEnemy(){
     stage++;
     enemy.stageKilledCount = 0;
   };
+  var clickX = event.pageX;
+  var clickY = event.pageY;
+  $("#damageText").css({"top" : clickY + -50 + "px", "left" : clickX + -35 + "px"}).fadeIn(100).hide(100);
   refreshGame();
   //enemyAnimation();
 };
@@ -99,6 +102,7 @@ function noMoney(purchaseType){
 };
 
 function refreshGame(){
+  $("#damageText").text(dpc);
   if (settings.language === "enLanguage") {
 
     $("#gold").html("Love: " + Math.floor(gold));
@@ -212,6 +216,10 @@ function clickHandlerShopAuto(hero){
 $
 setInterval(dpsEarn, 1000);
 
+setTimeout(function () {
+  $("#loadScreen").hide();
+}, 3000);
+
 $(function(){
   $("main").on("click" , clickHandlerEnemy);
 
@@ -259,7 +267,7 @@ $(function(){
     $(".settingsOption").html("Язык");
   });
 
-  $("#settingsMenu").hide();
+  $("#settingsMenu").fadeOut();
   $("#damageText").hide();
 
   $("#settings").click(function(){
