@@ -149,6 +149,8 @@ function refreshGame(){
     $("#olia").html("Оляша </br>" + Math.floor(olia.cost / 1000) + "K монеток" + " (+" + Math.floor(olia.damageMultipler) + " DPS) </br>" + "Куплено " + olia.ownedCount);
 
     $("#enemyHealth").html("Здоров\'я: " + rounded(currentEnemy.currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
+    $("#enemyName").html(currentEnemy.currentImage.toUpperCase());
+
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
     $("#stage").html("РІВЕНЬ: " + stage)
   }else if (settings.language === "ruLanguage") {
@@ -169,6 +171,8 @@ function refreshGame(){
     $("#olia").html("Аляша </br>" + Math.floor(olia.cost / 1000) + "K монеток" + " (+" + Math.floor(olia.damageMultipler) + " DPS) </br>" + "Куплено " + olia.ownedCount);
 
     $("#enemyHealth").html("Здоровля: " + rounded(currentEnemy.currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
+    $("#enemyName").html(currentEnemy.currentImage.toUpperCase());
+    
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
     $("#stage").html("УРОВЕНЬ: " + stage)
   };

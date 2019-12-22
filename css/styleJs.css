@@ -58,7 +58,7 @@ main{
 	margin-bottom: 2vw;
 	box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.2);
 	cursor: pointer;
-	height: 88vh;
+	height: 88vmin;
 }
 
 footer{
@@ -237,7 +237,7 @@ h2{
 		font-size: 4vmax;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		margin-bottom: 0px;
-		margin-top: 0.3vw;
+		margin-top: 0.3vh;
 		clear: left;
 }
 p{
@@ -451,23 +451,21 @@ blockquote p{
 }
 
 #settingsMenu{
-	position: fixed;
-	width: 30vw;
+	position: absolute;
+	width: 30vmax;
 	height: 35vmin;
 	border: 2px solid white;
 	border-radius: 0.55vw;
 	background-color: rgba(111, 211, 151, 0.8);
-	left: 50%;
-	top: 30%;
+	left: 38%;
+	top: 30vmin;
 }
 
 #settingsCloseButton{
-	position: fixed;
+	position: absolute;
 	cursor: pointer;
-
-	left: 78vw;
-	top: 32%;
-
+	left: 27vmax;
+	top: 2.5vmin;
 	font-size: 1.5vmax;
 }
 
@@ -482,13 +480,13 @@ blockquote p{
 
 .settingsOption{
 	font-size: 2vmax;
-	margin-top: 2vh;
+	margin-top: 2vmin;
 }
 
 #enemyName{
 	position: fixed;
 	width: 66.5vw;
-	top: auto;
+	top: 89vmin;
 	text-align: center;
 	color: #6B8E23;
 	font-size: 2vmax;
