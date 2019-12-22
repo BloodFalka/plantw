@@ -374,7 +374,7 @@ blockquote p{
 }
 
 #enemyImg{
-	margin-top: 16vmin;
+	margin-top: 6vmax;
 	border: none;
 	transition: all 1s;
 	cursor: pointer;
@@ -398,7 +398,7 @@ blockquote p{
 	position: fixed;
 	color: white;
 	font-size: 2vmax;
-	top: 12vmin;
+	top: 6.2vmax;
 	text-align: right;
 	width: 63vw;
 }
@@ -430,7 +430,7 @@ blockquote p{
 
 #enemyHealth{
 	position: fixed;
-	top: 18vmin;
+	top: 9vmax;
 	width: 66.5vw;
 	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	font-size: 3vmax;
@@ -439,7 +439,7 @@ blockquote p{
 #stage{
 	position: fixed;
 	text-align: left;
-	top: 12vmin;
+	top: 6.2vmax;
 	margin-left: 2vw;
 	width: 66.5vw;
 	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);

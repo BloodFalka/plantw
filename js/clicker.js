@@ -80,7 +80,7 @@ function clickHandlerEnemy(){
   var clickY = event.pageY;
   $("#damageText").css({"top" : clickY + -50 + "px", "left" : clickX + -35 + "px"}).fadeIn(100).hide(100);
   refreshGame();
-  //enemyAnimation();
+  enemyAnimation();
 };
 
 function rounded(number, countAfterFloat){
@@ -105,20 +105,20 @@ function refreshGame(){
   $("#damageText").text(dpc);
   if (settings.language === "enLanguage") {
 
-    $("#gold").html("Love: " + Math.floor(gold));
+    $("#gold").html("Oxygen: " + Math.floor(gold));
 
     $("#enemyImg").attr("src", "img/clicker/" + currentEnemy.currentImage + ".png");
     $("#dpc").html("WpC: " + Math.floor(dpc));
     $("#dps").html("WpS: " + Math.floor(dps));
 
-    $("#sword").html("Watering Pot </br>" + Math.floor(sword.currentCost) + " Plant Love" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Owned "+ sword.ownedCount);
+    $("#sword").html("Watering Pot </br>" + Math.floor(sword.currentCost) + " Oxygen" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Level "+ sword.ownedCount);
 
-    $("#luda").html("Luda </br>" + Math.floor(luda.currentCost) + " Love" + " (+" + Math.floor(luda.damageMultipler) + " WpS) </br>" + "Owned " + luda.ownedCount);
-    $("#galina").html("Galiasha </br>" + Math.floor(galina.currentCost) + " Love" + " (+" + Math.floor(galina.damageMultipler) + " WpS) </br>" + "Owned " + galina.ownedCount);
-    $("#anton").html("Anton </br>" + Math.floor(anton.currentCost / 1000) + "K Love" + " (+" + Math.floor(anton.damageMultipler / 1000) + "К WpS) </br>" + "Owned " + anton.ownedCount);
-    $("#yarik").html("Yarik </br>" + Math.floor(yarik.currentCost / 1000) + "K Love" + " (+" + Math.floor(yarik.damageMultipler / 1000) + "К WpS) </br>" + "Owned " + yarik.ownedCount);
-    $("#nazar").html("Nazar </br>" + Math.floor(nazar.currentCost / 1000) + "K Love" + " (+" + Math.floor(nazar.damageMultipler / 1000) + "К WpS) </br>" + "Owned " + nazar.ownedCount);
-    $("#olia").html("Oliasha </br>" + Math.floor(olia.currentCost / 1000) + "K Love" + " (+" + Math.floor(olia.damageMultipler / 1000) + "К WpS) </br>" + "Owned " + olia.ownedCount);
+    $("#luda").html("Luda </br>" + Math.floor(luda.currentCost) + " Oxygen" + " (+" + Math.floor(luda.damageMultipler) + " WpS) </br>" + "Level " + luda.ownedCount);
+    $("#galina").html("Galiasha </br>" + Math.floor(galina.currentCost) + " Oxygen" + " (+" + Math.floor(galina.damageMultipler) + " WpS) </br>" + "Level " + galina.ownedCount);
+    $("#anton").html("Anton </br>" + Math.floor(anton.currentCost / 1000) + "K Oxygen" + " (+" + Math.floor(anton.damageMultipler / 1000) + "К WpS) </br>" + "Level " + anton.ownedCount);
+    $("#yarik").html("Yarik </br>" + Math.floor(yarik.currentCost / 1000) + "K Oxygen" + " (+" + Math.floor(yarik.damageMultipler / 1000) + "К WpS) </br>" + "Level " + yarik.ownedCount);
+    $("#nazar").html("Nazar </br>" + Math.floor(nazar.currentCost / 1000) + "K Oxygen" + " (+" + Math.floor(nazar.damageMultipler / 1000) + "К WpS) </br>" + "Level " + nazar.ownedCount);
+    $("#olia").html("Oliasha </br>" + Math.floor(olia.currentCost / 1000) + "K Oxygen" + " (+" + Math.floor(olia.damageMultipler / 1000) + "К WpS) </br>" + "Level " + olia.ownedCount);
 
     $("#enemyHealth").html("Hunger: " + rounded(currentEnemy.currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
     $("#enemyName").html(currentEnemy.currentImage.toUpperCase());
@@ -127,20 +127,20 @@ function refreshGame(){
     $("#stage").html("STAGE: " + stage)
   }else if (settings.language === "ukLanguage") {
 
-    $("#gold").html("Любові: " + Math.floor(gold));
+    $("#gold").html("Кисню: " + Math.floor(gold));
 
     $("#enemyImg").attr("src", "img/clicker/" + currentEnemy.currentImage + ".png");
     $("#dpc").html("WpC: " + Math.floor(dpc));
     $("#dps").html("WpS: " + Math.floor(dps));
 
-    $("#sword").html("Ліїчка </br>" + Math.floor(sword.currentCost) + " любові" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Куплено "+ sword.ownedCount);
+    $("#sword").html("Ліїчка </br>" + Math.floor(sword.currentCost) + " Кисню" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Рівень "+ sword.ownedCount);
 
-    $("#luda").html("Людочка </br>" + Math.floor(luda.currentCost) + " любові" + " (+" + Math.floor(luda.damageMultipler) + " WpS) </br>" + "Куплено " + luda.ownedCount);
-    $("#galina").html("Галяша </br>" + Math.floor(galina.currentCost) + " любові" + " (+" + Math.floor(galina.damageMultipler) + " WpS) </br>" + "Куплено " + galina.ownedCount);
-    $("#anton").html("Антоха </br>" + Math.floor(anton.currentCost / 1000) + "K любові" + " (+" + Math.floor(anton.damageMultipler / 1000) + "К WpS) </br>" + "Куплено " + anton.ownedCount);
-    $("#yarik").html("Ярік </br>" + Math.floor(yarik.currentCost / 1000) + "K любові" + " (+" + Math.floor(yarik.damageMultipler / 1000) + "К WpS) </br>" + "Куплено " + yarik.ownedCount);
-    $("#nazar").html("Назарій </br>" + Math.floor(nazar.currentCost / 1000) + "K любові" + " (+" + Math.floor(nazar.damageMultipler / 1000) + "К WpS) </br>" + "Куплено " + nazar.ownedCount);
-    $("#olia").html("Оляша </br>" + Math.floor(olia.currentCost / 1000) + "K любові" + " (+" + Math.floor(olia.damageMultipler / 1000) + "К WpS) </br>" + "Куплено " + olia.ownedCount);
+    $("#luda").html("Людочка </br>" + Math.floor(luda.currentCost) + " Кисню" + " (+" + Math.floor(luda.damageMultipler) + " WpS) </br>" + "Рівень " + luda.ownedCount);
+    $("#galina").html("Галяша </br>" + Math.floor(galina.currentCost) + " Кисню" + " (+" + Math.floor(galina.damageMultipler) + " WpS) </br>" + "Рівень " + galina.ownedCount);
+    $("#anton").html("Антоха </br>" + Math.floor(anton.currentCost / 1000) + "K Кисню" + " (+" + Math.floor(anton.damageMultipler / 1000) + "К WpS) </br>" + "Рівень " + anton.ownedCount);
+    $("#yarik").html("Ярік </br>" + Math.floor(yarik.currentCost / 1000) + "K Кисню" + " (+" + Math.floor(yarik.damageMultipler / 1000) + "К WpS) </br>" + "Рівень " + yarik.ownedCount);
+    $("#nazar").html("Назарій </br>" + Math.floor(nazar.currentCost / 1000) + "K Кисню" + " (+" + Math.floor(nazar.damageMultipler / 1000) + "К WpS) </br>" + "Рівень " + nazar.ownedCount);
+    $("#olia").html("Оляша </br>" + Math.floor(olia.currentCost / 1000) + "K Кисню" + " (+" + Math.floor(olia.damageMultipler / 1000) + "К WpS) </br>" + "Рівень " + olia.ownedCount);
 
     $("#enemyHealth").html("Спрага: " + rounded(currentEnemy.currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
     $("#enemyName").html(currentEnemy.currentImage.toUpperCase());
@@ -149,22 +149,22 @@ function refreshGame(){
     $("#stage").html("РІВЕНЬ: " + stage)
   }else if (settings.language === "ruLanguage") {
 
-    $("#gold").html("Любви: " + Math.floor(gold));
+    $("#gold").html("Кислород: " + Math.floor(gold));
 
     $("#enemyImg").attr("src", "img/clicker/" + currentEnemy.currentImage + ".png");
     $("#dpc").html("WpC: " + Math.floor(dpc));
     $("#dps").html("WpS: " + Math.floor(dps));
 
-    $("#sword").html("Лейка </br>" + Math.floor(sword.currentCost) + " любви" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Куплено "+ sword.ownedCount);
+    $("#sword").html("Лейка </br>" + Math.floor(sword.currentCost) + " Кислорода" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Уровень "+ sword.ownedCount);
 
-    $("#luda").html("Людочка </br>" + Math.floor(luda.currentCost) + " любви" + " (+" + Math.floor(luda.damageMultipler) + " WpS) </br>" + "Куплено " + luda.ownedCount);
-    $("#galina").html("Галяша </br>" + Math.floor(galina.currentCost) + " любви" + " (+" + Math.floor(galina.damageMultipler) + " WpS) </br>" + "Куплено " + galina.ownedCount);
-    $("#anton").html("Антоха </br>" + Math.floor(anton.currentCost / 1000) + "K любви" + " (+" + Math.floor(anton.damageMultipler / 1000) + "К WpS) </br>" + "Куплено " + anton.ownedCount);
-    $("#yarik").html("Ярик </br>" + Math.floor(yarik.currentCost / 1000) + "K любви" + " (+" + Math.floor(yarik.damageMultipler / 1000) + "К WpS) </br>" + "Куплено " + yarik.ownedCount);
-    $("#nazar").html("Назарей </br>" + Math.floor(nazar.currentCost / 1000) + "K любви" + " (+" + Math.floor(nazar.damageMultipler / 1000) + "К WpS) </br>" + "Куплено " + nazar.ownedCount);
-    $("#olia").html("Аляша </br>" + Math.floor(olia.currentCost / 1000) + "K любви" + " (+" + Math.floor(olia.damageMultipler / 1000) + "К WpS) </br>" + "Куплено " + olia.ownedCount);
+    $("#luda").html("Людочка </br>" + Math.floor(luda.currentCost) + " Кислорода" + " (+" + Math.floor(luda.damageMultipler) + " WpS) </br>" + "Уровень " + luda.ownedCount);
+    $("#galina").html("Галяша </br>" + Math.floor(galina.currentCost) + " Кислорода" + " (+" + Math.floor(galina.damageMultipler) + " WpS) </br>" + "Уровень " + galina.ownedCount);
+    $("#anton").html("Антоха </br>" + Math.floor(anton.currentCost / 1000) + "K Кислорода" + " (+" + Math.floor(anton.damageMultipler / 1000) + "К WpS) </br>" + "Уровень " + anton.ownedCount);
+    $("#yarik").html("Ярик </br>" + Math.floor(yarik.currentCost / 1000) + "K Кислорода" + " (+" + Math.floor(yarik.damageMultipler / 1000) + "К WpS) </br>" + "Уровень " + yarik.ownedCount);
+    $("#nazar").html("Назарей </br>" + Math.floor(nazar.currentCost / 1000) + "K Кислорода" + " (+" + Math.floor(nazar.damageMultipler / 1000) + "К WpS) </br>" + "Уровень " + nazar.ownedCount);
+    $("#olia").html("Аляша </br>" + Math.floor(olia.currentCost / 1000) + "K Кислорода" + " (+" + Math.floor(olia.damageMultipler / 1000) + "К WpS) </br>" + "Уровень " + olia.ownedCount);
 
-    $("#enemyHealth").html("Жажды: " + rounded(currentEnemy.currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
+    $("#enemyHealth").html("Жажда: " + rounded(currentEnemy.currentHealth, 0) + "/" + rounded(enemy.maxHealth, 0));
     $("#enemyName").html(currentEnemy.currentImage.toUpperCase());
 
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
@@ -173,14 +173,14 @@ function refreshGame(){
 };
 
 
-/*function enemyAnimation(){
+function enemyAnimation(){
   $("#enemyImg").css({"paddingTop": "+10px"});
   $("#enemyImg").css({"paddingLeft": "+10px"});
   setTimeout(function () {
     $("#enemyImg").css({"paddingTop": "-10px"});
     $("#enemyImg").css({"paddingLeft": "-10px"});
   }, 20);
-};*/
+};
 
 function clickHandlerShopClick(equipment){
   if (gold >= equipment.currentCost) {
