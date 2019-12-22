@@ -1,7 +1,7 @@
 html,
 body {
-		background-image: url(../img/backgrounds/brick.jpg); /* ÐŸÑƒÑ‚ÑŒ Ðº Ñ„Ð¾Ð½Ð¾Ð²Ð¾Ð¼Ñƒ Ñ€Ð¸ÑÑƒÐ½ÐºÑƒ */
-		background-repeat: repeat-y; /* ÐžÑ‚Ð¼ÐµÐ½ÑÐµÐ¼ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÐµÐ½Ð¸Ðµ Ñ„Ð¾Ð½Ð° */
+		background-image: url(../img/backgrounds/brick.jpg); /* ÃÅ¸Ã‘Æ’Ã‘â€šÃ‘Å’ ÃÂº Ã‘â€žÃÂ¾ÃÂ½ÃÂ¾ÃÂ²ÃÂ¾ÃÂ¼Ã‘Æ’ Ã‘â‚¬ÃÂ¸Ã‘ÂÃ‘Æ’ÃÂ½ÃÂºÃ‘Æ’ */
+		background-repeat: repeat-y; /* ÃÅ¾Ã‘â€šÃÂ¼ÃÂµÃÂ½Ã‘ÂÃÂµÃÂ¼ ÃÂ¿ÃÂ¾ÃÂ²Ã‘â€šÃÂ¾Ã‘â‚¬ÃÂµÃÂ½ÃÂ¸ÃÂµ Ã‘â€žÃÂ¾ÃÂ½ÃÂ° */
 		background-color: #ffc1d8;
 		background-size: 100%;
 		background-attachment: fixed;
@@ -43,8 +43,8 @@ aside{
 }
 
 ::-webkit-scrollbar { /* chrome based */
-    width: 0px;  /* ÑˆÐ¸Ñ€Ð¸Ð½Ð° scrollbar'a */
-    background: transparent;  /* Ð¾Ð¿Ñ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ð¾ */
+    width: 0px;  /* Ã‘Ë†ÃÂ¸Ã‘â‚¬ÃÂ¸ÃÂ½ÃÂ° scrollbar'a */
+    background: transparent;  /* ÃÂ¾ÃÂ¿Ã‘â€ ÃÂ¸ÃÂ¾ÃÂ½ÃÂ°ÃÂ»Ã‘Å’ÃÂ½ÃÂ¾ */
 }
 
 main{
@@ -89,7 +89,7 @@ a:hover
   color: tomato;
 }
 
-/* ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ Ð¼ÐµÐ½ÑŽ */
+/* ÃÂºÃÂ¾ÃÂ½Ã‘â€šÃÂµÃÂ¹ÃÂ½ÃÂµÃ‘â‚¬ ÃÂ¼ÃÂµÃÂ½Ã‘Å½ */
 .menu_box {
   display: block;
   position: fixed;
@@ -106,7 +106,7 @@ a:hover
   box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼ÐµÐ½ÑŽ */
+/* Ã‘ÂÃÂ»ÃÂµÃÂ¼ÃÂµÃÂ½Ã‘â€šÃ‘â€¹ ÃÂ¼ÃÂµÃÂ½Ã‘Å½ */
 .menu_item {
   display: block;
 	padding-left: 3.5vmax;
@@ -157,13 +157,13 @@ ul.menu_box > li:hover > ul.sub_menu{
 	display: block;
 }
 
-/* ÑÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ‡ÐµÐºÐ±Ð¾ÐºÑ */
+/* Ã‘ÂÃÂºÃ‘â‚¬Ã‘â€¹ÃÂ²ÃÂ°ÃÂµÃÂ¼ Ã‘â€¡ÃÂµÃÂºÃÂ±ÃÂ¾ÃÂºÃ‘Â */
 #menu_toggle {
   opacity: 0;
 }
-/* ÑÑ‚Ð¸Ð»Ð¸Ð·ÑƒÐµÐ¼ ÐºÐ½Ð¾Ð¿ÐºÑƒ */
+/* Ã‘ÂÃ‘â€šÃÂ¸ÃÂ»ÃÂ¸ÃÂ·Ã‘Æ’ÃÂµÃÂ¼ ÃÂºÃÂ½ÃÂ¾ÃÂ¿ÃÂºÃ‘Æ’ */
 .menu_btn {
-  align-items: center;  /* Ñ†ÐµÐ½Ñ‚Ñ€Ð¸Ñ€ÑƒÐµÐ¼ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ ÐºÐ½Ð¾Ð¿ÐºÐ¸ */
+  align-items: center;  /* Ã‘â€ ÃÂµÃÂ½Ã‘â€šÃ‘â‚¬ÃÂ¸Ã‘â‚¬Ã‘Æ’ÃÂµÃÂ¼ Ã‘ÂÃÂ¾ÃÂ´ÃÂµÃ‘â‚¬ÃÂ¶ÃÂ¸ÃÂ¼ÃÂ¾ÃÂµ ÃÂºÃÂ½ÃÂ¾ÃÂ¿ÃÂºÃÂ¸ */
   position: relative;
 	float: left;
 	margin-top: 0.20em;
@@ -174,7 +174,7 @@ ul.menu_box > li:hover > ul.sub_menu{
   cursor: pointer;
   z-index: 1;
 }
-/* Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ "Ð³Ð°Ð¼Ð±ÑƒÑ€Ð³ÐµÑ€" */
+/* ÃÂ´ÃÂ¾ÃÂ±ÃÂ°ÃÂ²ÃÂ»Ã‘ÂÃÂµÃÂ¼ "ÃÂ³ÃÂ°ÃÂ¼ÃÂ±Ã‘Æ’Ã‘â‚¬ÃÂ³ÃÂµÃ‘â‚¬" */
 .menu_btn > span,
 .menu_btn > span::before,
 .menu_btn > span::after {
@@ -377,7 +377,8 @@ blockquote p{
 	border: none;
 	transition: all 1s;
 	cursor: pointer;
-	width: 33%;
+	height: 55vmin;
+	width: auto;
 }
 
 .shop p{
@@ -486,7 +487,8 @@ blockquote p{
 
 #enemyName{
 	position: fixed;
-	width: 65%;
+	width: 66.5vw;
+	top: auto;
 	text-align: center;
 	color: #6B8E23;
 	font-size: 2vmax;

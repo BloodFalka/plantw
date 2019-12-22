@@ -13,7 +13,7 @@ var enemy = {
   maxHealth : 10*(stage - 1 + Math.pow(1.55, stage-1)),
   killedCount : 0,
   stageKilledCount: 0,
-  image : ["aloe", "cactus", "mandragora", "golem"]
+  image : ["aloe", "cactus", "mandragora", "golem", "realCactus", "oldBroccole", "finnTheGreen"]
 };
 
 var currentEnemy = {
@@ -30,12 +30,12 @@ function item(cost, ownedCount, damageMultipler, costMultipler){
 
 var sword = new item(5, 0, 1, 1.08);
 
-var luda = new item(50, 0, 1, 1.09);
-var galina = new item(500, 0, 5, 1.09);
-var anton = new item(2000, 0, 20, 1.09);
-var yarik = new item(1000, 0, 100, 1.09);
-var nazar = new item(50000, 0, 200, 1.09);
-var olia = new item(500000, 0, 500, 1.09);
+var luda = new item(50, 0, 5, 1.09);
+var galina = new item(500, 0, 20, 1.09);
+var anton = new item(2000, 0, 200, 1.09);
+var yarik = new item(1000, 0, 1000, 1.09);
+var nazar = new item(50000, 0, 20000, 1.09);
+var olia = new item(500000, 0, 100000, 1.09);
 
 function dpsEarn(){
   if (dps > 0) {
@@ -48,11 +48,11 @@ function dpsEarn(){
       enemy.maxHealth = random(10*enemyHealthMultipler)+10;
       currentEnemy.currentHealth = enemy.maxHealth;
       currentEnemy.currentImage = enemy.image[random(enemy.image.length)];
-      gold += (enemy.maxHealth/15);
+      gold += Math.ceil((enemy.maxHealth/goldMultipler));
     };
-    if (enemy.stageKilledCount == 10){
-      enemy.stageKilledCount = 0
+    if (enemy.stageKilledCount == 11){
       stage++;
+      enemy.stageKilledCount = 0;
     };
     refreshGame();
     enemyAnimation();
@@ -70,11 +70,11 @@ function clickHandlerEnemy(){
     enemy.stageKilledCount += 1;
     currentEnemy.currentHealth = enemy.maxHealth;
     currentEnemy.currentImage = enemy.image[random(enemy.image.length)];
-    gold += (enemy.maxHealth/goldMultipler);
+    gold += Math.ceil((enemy.maxHealth/goldMultipler));
   };
-  if (enemy.stageKilledCount == 10){
-    enemy.stageKilledCount = 0
+  if (enemy.stageKilledCount == 11){
     stage++;
+    enemy.stageKilledCount = 0;
   };
   /*if ((stage % 5) && (enemy.stageKilledCount !== 9)) {
   }else {
