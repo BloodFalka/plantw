@@ -15,7 +15,7 @@ header {
 		position: fixed;
 		background-color: rgba(255, 192, 203, 1);
 		border-radius: 0.2vw;
-		height: 5.5vh;
+		height: 4.5vmax;
 		width: 99%;
 		font-size: 3vh;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -29,7 +29,7 @@ header {
 
 aside{
 	position: relative;
-	margin-top: 6.5vh;
+	margin-top: 4vmax;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-color: rgba(111, 211, 151, 0.8);
 	float:left;
@@ -50,7 +50,7 @@ aside{
 main{
 	float:right;
 	position: relative;
-	margin-top: 6.5vh;
+	margin-top: 4vmax;
 	background-color: rgba(135, 206, 235, 0.8);
 	width: 68%;
 	border-radius: 0.5vw;
@@ -356,7 +356,7 @@ blockquote p{
 #logo img{
 	position:sticky;
 	border: none;
-	width: 5vh;
+	width: 4vmax;
 	margin: 0px;
 	padding: 0px;
 	float: left;
@@ -364,7 +364,7 @@ blockquote p{
 
 #logo h1{
 	position:sticky;
-	font-size: 4vh;
+	font-size: 3vmax;
 	margin: 0px;
 	margin-left: 1.5%;
 	padding: 0px;
@@ -401,13 +401,13 @@ blockquote p{
 
 #gold{
 	display: inline-block;
-	width: 70%;
+	width: 69%;
 	float: right;
 	clear: right;
 	color: #FFFF33;
 	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	margin-top: 0.5vh;
-	font-size: 4.5vh;
+	font-size: 3vmax;
 }
 
 /*#diamonds{
@@ -422,6 +422,7 @@ blockquote p{
 
 #enemyHealth{
 	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+	font-size: 3vmax;
 }
 
 #stage, #killedCount{
@@ -441,7 +442,7 @@ blockquote p{
 	position: absolute;
 	left: 90vw;
 	border: none;
-	width: 6.5vh;
+	width: 5vmax;
 	margin-top: -0.5vh;
 	margin-bottom: 0vh;
 	margin-right: 1vw;
@@ -485,8 +486,7 @@ blockquote p{
 
 #enemyName{
 	position: fixed;
-	left: 61%;
-	top: 90%;
+	width: 65%;
 	text-align: center;
 	color: #6B8E23;
 	font-size: 2vmax;
