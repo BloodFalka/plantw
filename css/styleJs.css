@@ -1,7 +1,7 @@
 html,
 body {
-		background-image: url(../img/backgrounds/brick.jpg); /* ÃÅ¸Ã‘Æ’Ã‘â€šÃ‘Å’ ÃÂº Ã‘â€žÃÂ¾ÃÂ½ÃÂ¾ÃÂ²ÃÂ¾ÃÂ¼Ã‘Æ’ Ã‘â‚¬ÃÂ¸Ã‘ÂÃ‘Æ’ÃÂ½ÃÂºÃ‘Æ’ */
-		background-repeat: repeat-y; /* ÃÅ¾Ã‘â€šÃÂ¼ÃÂµÃÂ½Ã‘ÂÃÂµÃÂ¼ ÃÂ¿ÃÂ¾ÃÂ²Ã‘â€šÃÂ¾Ã‘â‚¬ÃÂµÃÂ½ÃÂ¸ÃÂµ Ã‘â€žÃÂ¾ÃÂ½ÃÂ° */
+		background-image: url(../img/backgrounds/brick.jpg); /* ÃƒÂÃ…Â¸Ãƒâ€˜Ã†â€™Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã…â€™ ÃƒÂÃ‚Âº Ãƒâ€˜Ã¢â‚¬Å¾ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â½ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â²ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â¼Ãƒâ€˜Ã†â€™ Ãƒâ€˜Ã¢â€šÂ¬ÃƒÂÃ‚Â¸Ãƒâ€˜Ã‚ÂÃƒâ€˜Ã†â€™ÃƒÂÃ‚Â½ÃƒÂÃ‚ÂºÃƒâ€˜Ã†â€™ */
+		background-repeat: repeat-y; /* ÃƒÂÃ…Â¾Ãƒâ€˜Ã¢â‚¬Å¡ÃƒÂÃ‚Â¼ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½Ãƒâ€˜Ã‚ÂÃƒÂÃ‚ÂµÃƒÂÃ‚Â¼ ÃƒÂÃ‚Â¿ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â²Ãƒâ€˜Ã¢â‚¬Å¡ÃƒÂÃ‚Â¾Ãƒâ€˜Ã¢â€šÂ¬ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½ÃƒÂÃ‚Â¸ÃƒÂÃ‚Âµ Ãƒâ€˜Ã¢â‚¬Å¾ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â½ÃƒÂÃ‚Â° */
 		background-color: #ffc1d8;
 		background-size: 100%;
 		background-attachment: fixed;
@@ -29,36 +29,36 @@ header {
 
 aside{
 	position: relative;
-	margin-top: 4vmax;
+	margin-top: 5vmax;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-color: rgba(111, 211, 151, 0.8);
 	float:left;
-	border-radius: 0.5vw;
+	border-radius: 1.5vw;
 	text-align: center;
 	width: 30%;
 	margin-bottom: 2vw;
 	box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	overflow: scroll;
-	height: 88vh;
+	height: 84vh;
 }
 
 ::-webkit-scrollbar { /* chrome based */
-    width: 0px;  /* Ã‘Ë†ÃÂ¸Ã‘â‚¬ÃÂ¸ÃÂ½ÃÂ° scrollbar'a */
-    background: transparent;  /* ÃÂ¾ÃÂ¿Ã‘â€ ÃÂ¸ÃÂ¾ÃÂ½ÃÂ°ÃÂ»Ã‘Å’ÃÂ½ÃÂ¾ */
+    width: 0px;  /* Ãƒâ€˜Ã‹â€ ÃƒÂÃ‚Â¸Ãƒâ€˜Ã¢â€šÂ¬ÃƒÂÃ‚Â¸ÃƒÂÃ‚Â½ÃƒÂÃ‚Â° scrollbar'a */
+    background: transparent;  /* ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â¿Ãƒâ€˜Ã¢â‚¬Â ÃƒÂÃ‚Â¸ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â½ÃƒÂÃ‚Â°ÃƒÂÃ‚Â»Ãƒâ€˜Ã…â€™ÃƒÂÃ‚Â½ÃƒÂÃ‚Â¾ */
 }
 
 main{
 	float:right;
 	position: relative;
-	margin-top: 4vmax;
+	margin-top: 5vmax;
 	background-color: rgba(135, 206, 235, 0.8);
 	width: 68%;
-	border-radius: 0.5vw;
+	border-radius: 1.5vw;
 	text-align: center;
 	margin-bottom: 2vw;
 	box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.2);
 	cursor: pointer;
-	height: 88vmin;
+	height: 84vmin;
 }
 
 footer{
@@ -89,7 +89,7 @@ a:hover
   color: tomato;
 }
 
-/* ÃÂºÃÂ¾ÃÂ½Ã‘â€šÃÂµÃÂ¹ÃÂ½ÃÂµÃ‘â‚¬ ÃÂ¼ÃÂµÃÂ½Ã‘Å½ */
+/* ÃƒÂÃ‚ÂºÃƒÂÃ‚Â¾ÃƒÂÃ‚Â½Ãƒâ€˜Ã¢â‚¬Å¡ÃƒÂÃ‚ÂµÃƒÂÃ‚Â¹ÃƒÂÃ‚Â½ÃƒÂÃ‚ÂµÃƒâ€˜Ã¢â€šÂ¬ ÃƒÂÃ‚Â¼ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½Ãƒâ€˜Ã…Â½ */
 .menu_box {
   display: block;
   position: fixed;
@@ -106,7 +106,7 @@ a:hover
   box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Ã‘ÂÃÂ»ÃÂµÃÂ¼ÃÂµÃÂ½Ã‘â€šÃ‘â€¹ ÃÂ¼ÃÂµÃÂ½Ã‘Å½ */
+/* Ãƒâ€˜Ã‚ÂÃƒÂÃ‚Â»ÃƒÂÃ‚ÂµÃƒÂÃ‚Â¼ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã¢â‚¬Â¹ ÃƒÂÃ‚Â¼ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½Ãƒâ€˜Ã…Â½ */
 .menu_item {
   display: block;
 	padding-left: 3.5vmax;
@@ -157,13 +157,13 @@ ul.menu_box > li:hover > ul.sub_menu{
 	display: block;
 }
 
-/* Ã‘ÂÃÂºÃ‘â‚¬Ã‘â€¹ÃÂ²ÃÂ°ÃÂµÃÂ¼ Ã‘â€¡ÃÂµÃÂºÃÂ±ÃÂ¾ÃÂºÃ‘Â */
+/* Ãƒâ€˜Ã‚ÂÃƒÂÃ‚ÂºÃƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã¢â‚¬Â¹ÃƒÂÃ‚Â²ÃƒÂÃ‚Â°ÃƒÂÃ‚ÂµÃƒÂÃ‚Â¼ Ãƒâ€˜Ã¢â‚¬Â¡ÃƒÂÃ‚ÂµÃƒÂÃ‚ÂºÃƒÂÃ‚Â±ÃƒÂÃ‚Â¾ÃƒÂÃ‚ÂºÃƒâ€˜Ã‚Â */
 #menu_toggle {
   opacity: 0;
 }
-/* Ã‘ÂÃ‘â€šÃÂ¸ÃÂ»ÃÂ¸ÃÂ·Ã‘Æ’ÃÂµÃÂ¼ ÃÂºÃÂ½ÃÂ¾ÃÂ¿ÃÂºÃ‘Æ’ */
+/* Ãƒâ€˜Ã‚ÂÃƒâ€˜Ã¢â‚¬Å¡ÃƒÂÃ‚Â¸ÃƒÂÃ‚Â»ÃƒÂÃ‚Â¸ÃƒÂÃ‚Â·Ãƒâ€˜Ã†â€™ÃƒÂÃ‚ÂµÃƒÂÃ‚Â¼ ÃƒÂÃ‚ÂºÃƒÂÃ‚Â½ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â¿ÃƒÂÃ‚ÂºÃƒâ€˜Ã†â€™ */
 .menu_btn {
-  align-items: center;  /* Ã‘â€ ÃÂµÃÂ½Ã‘â€šÃ‘â‚¬ÃÂ¸Ã‘â‚¬Ã‘Æ’ÃÂµÃÂ¼ Ã‘ÂÃÂ¾ÃÂ´ÃÂµÃ‘â‚¬ÃÂ¶ÃÂ¸ÃÂ¼ÃÂ¾ÃÂµ ÃÂºÃÂ½ÃÂ¾ÃÂ¿ÃÂºÃÂ¸ */
+  align-items: center;  /* Ãƒâ€˜Ã¢â‚¬Â ÃƒÂÃ‚ÂµÃƒÂÃ‚Â½Ãƒâ€˜Ã¢â‚¬Å¡Ãƒâ€˜Ã¢â€šÂ¬ÃƒÂÃ‚Â¸Ãƒâ€˜Ã¢â€šÂ¬Ãƒâ€˜Ã†â€™ÃƒÂÃ‚ÂµÃƒÂÃ‚Â¼ Ãƒâ€˜Ã‚ÂÃƒÂÃ‚Â¾ÃƒÂÃ‚Â´ÃƒÂÃ‚ÂµÃƒâ€˜Ã¢â€šÂ¬ÃƒÂÃ‚Â¶ÃƒÂÃ‚Â¸ÃƒÂÃ‚Â¼ÃƒÂÃ‚Â¾ÃƒÂÃ‚Âµ ÃƒÂÃ‚ÂºÃƒÂÃ‚Â½ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â¿ÃƒÂÃ‚ÂºÃƒÂÃ‚Â¸ */
   position: relative;
 	float: left;
 	margin-top: 0.20em;
@@ -174,7 +174,7 @@ ul.menu_box > li:hover > ul.sub_menu{
   cursor: pointer;
   z-index: 1;
 }
-/* ÃÂ´ÃÂ¾ÃÂ±ÃÂ°ÃÂ²ÃÂ»Ã‘ÂÃÂµÃÂ¼ "ÃÂ³ÃÂ°ÃÂ¼ÃÂ±Ã‘Æ’Ã‘â‚¬ÃÂ³ÃÂµÃ‘â‚¬" */
+/* ÃƒÂÃ‚Â´ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â±ÃƒÂÃ‚Â°ÃƒÂÃ‚Â²ÃƒÂÃ‚Â»Ãƒâ€˜Ã‚ÂÃƒÂÃ‚ÂµÃƒÂÃ‚Â¼ "ÃƒÂÃ‚Â³ÃƒÂÃ‚Â°ÃƒÂÃ‚Â¼ÃƒÂÃ‚Â±Ãƒâ€˜Ã†â€™Ãƒâ€˜Ã¢â€šÂ¬ÃƒÂÃ‚Â³ÃƒÂÃ‚ÂµÃƒâ€˜Ã¢â€šÂ¬" */
 .menu_btn > span,
 .menu_btn > span::before,
 .menu_btn > span::after {
@@ -374,6 +374,7 @@ blockquote p{
 }
 
 #enemyImg{
+	margin-top: 16vmin;
 	border: none;
 	transition: all 1s;
 	cursor: pointer;
@@ -394,10 +395,16 @@ blockquote p{
 }
 
 #dpc, #dps{
+	position: fixed;
 	color: white;
 	font-size: 2vmax;
-	display: inline-block;
-	width: 25%;
+	top: 12vmin;
+	text-align: right;
+	width: 63vw;
+}
+
+#dps{
+	left: 18vw;
 }
 
 #gold{
@@ -422,16 +429,20 @@ blockquote p{
 }*/
 
 #enemyHealth{
+	position: fixed;
+	top: 18vmin;
+	width: 66.5vw;
 	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	font-size: 3vmax;
 }
 
-#stage, #killedCount{
-	display: inline;
-	width: 60%;
+#stage{
+	position: fixed;
+	text-align: left;
+	top: 12vmin;
+	margin-left: 2vw;
+	width: 66.5vw;
 	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
-	margin-top: 1.5vh;
-	margin-right: 3vw;
 	font-size: 2vmax;
 }
 
@@ -446,7 +457,6 @@ blockquote p{
 	width: 5vmax;
 	margin-top: -0.5vh;
 	margin-bottom: 0vh;
-	margin-right: 1vw;
 	cursor: pointer;
 }
 
@@ -483,6 +493,16 @@ blockquote p{
 	margin-top: 2vmin;
 }
 
+#killedCount{
+	position: fixed;
+	width: 66.5vw;
+	top: 84vmin;
+	text-align: center;
+	color: tomato;
+	font-size: 2vmax;
+	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
 #enemyName{
 	position: fixed;
 	width: 66.5vw;
@@ -490,4 +510,10 @@ blockquote p{
 	text-align: center;
 	color: #6B8E23;
 	font-size: 2vmax;
+	text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+#damageText{
+	position: absolute;
+	font-size: 3vmax;
 }
