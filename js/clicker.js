@@ -32,6 +32,7 @@ function item(baseCost, currentCost, ownedCount, damageMultipler, costMultipler)
   this.costMultipler = costMultipler;
 };
 
+
 var sword = new item(5, 5, 0, 1, 1.07);
 
 var luda = new item(50, 50, 0, 5, 1.07);
@@ -43,13 +44,83 @@ var olia = new item(500000, 500000, 0, 100000, 1.07);
 
 load();
 function save(){
+  localStorage.setItem('settings', JSON.stringify(settings));
+
   localStorage.setItem('dpc', dpc);
-  dpc = parseInt(localStorage.getItem('dpc'));
+  localStorage.setItem('dps', dps);
+  localStorage.setItem('stage', stage);
+  localStorage.setItem('gold', gold);
+  localStorage.setItem('goldMultipler', goldMultipler);
+
+  localStorage.setItem('enemy', JSON.stringify(enemy));
+/*  localStorage.setItem('currentEnemy', JSON.stringify(currentEnemy)); */
+
+  localStorage.setItem('sword', JSON.stringify(sword));
+
+  localStorage.setItem('luda', JSON.stringify(luda));
+  localStorage.setItem('galina', JSON.stringify(galina));
+  localStorage.setItem('anton', JSON.stringify(anton));
+  localStorage.setItem('yarik', JSON.stringify(yarik));
+  localStorage.setItem('nazar', JSON.stringify(nazar));
+  localStorage.setItem('olia', JSON.stringify(olia));
 };
 
 function load(){
-  let dpc = parseInt(localStorage.getItem('dpc'));
-  dpc = localValue;
+  if ((parseInt(localStorage.getItem('gold')) === 0) && (parseInt(localStorage.getItem('dpc')) === 1)) {
+    settings = {
+      language : "enLanguage"
+    };
+
+    gold = 0;
+    goldMultipler = 15;
+
+    dpc = 1;
+    dps = 0;
+    stage = 1;
+
+    enemy = {
+      maxHealth : 10*(stage - 1 + Math.pow(1.55, stage-1)),
+      killedCount : 0,
+      stageKilledCount: 0,
+      image : ["aloe", "cactus", "mandragora", "golem", "realCactus", "oldBroccole", "finnTheGreen", "grassBear"]
+    };
+
+  /*  var currentEnemy = {
+      currentHealth: enemy.maxHealth,
+      currentImage : enemy.image[random(enemy.image.length)]
+    };*/
+
+    sword = new item(5, 5, 0, 1, 1.07);
+
+    luda = new item(50, 50, 0, 5, 1.07);
+    galina = new item(500, 500,0, 20, 1.07);
+    anton = new item(2000, 2000, 0, 200, 1.07);
+    yarik = new item(10000, 10000, 0, 1000, 1.07);
+    nazar = new item(50000, 50000, 0, 20000, 1.07);
+    olia = new item(500000, 500000, 0, 100000, 1.07);
+  }else if (parseInt(localStorage.getItem('gold')) > 0){
+    settings = JSON.parse(localStorage.getItem("settings"));
+
+    dpc = parseInt(localStorage.getItem('dpc'));
+    dps = parseInt(localStorage.getItem('dps'));
+
+    stage = parseInt(localStorage.getItem('stage'));
+
+    gold = parseInt(localStorage.getItem('gold'));
+    goldMultipler = parseInt(localStorage.getItem('goldMultipler'));
+
+    enemy = JSON.parse(localStorage.getItem("enemy"));
+  /*  currentEnemy = JSON.parse(localStorage.getItem("currentEnemy"));*/
+
+    sword = JSON.parse(localStorage.getItem("sword"));
+
+    luda = JSON.parse(localStorage.getItem("luda"));
+    galina = JSON.parse(localStorage.getItem("galina"));
+    anton = JSON.parse(localStorage.getItem("anton"));
+    yarik = JSON.parse(localStorage.getItem("yarik"));
+    nazar = JSON.parse(localStorage.getItem("nazar"));
+    olia = JSON.parse(localStorage.getItem("olia"));
+  };
 };
 
 function dpsEarn(){
@@ -139,6 +210,7 @@ function refreshGame(){
 
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
     $("#stage").html("STAGE: " + stage)
+    save();
   }else if (settings.language === "ukLanguage") {
 
     $("#gold").html("Кисню: " + Math.floor(gold));
@@ -161,6 +233,7 @@ function refreshGame(){
 
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
     $("#stage").html("РІВЕНЬ: " + stage)
+    save();
   }else if (settings.language === "ruLanguage") {
 
     $("#gold").html("Кислород: " + Math.floor(gold));
@@ -183,6 +256,7 @@ function refreshGame(){
 
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
     $("#stage").html("УРОВЕНЬ: " + stage)
+    save();
   };
 };
 
