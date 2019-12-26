@@ -1,3 +1,6 @@
+load();
+save();
+
 var settings = {
   language : "enLanguage"
 };
@@ -27,7 +30,7 @@ function item(baseCost, currentCost, ownedCount, damageMultipler, costMultipler)
   this.ownedCount = ownedCount;
   this.damageMultipler = damageMultipler;
   this.costMultipler = costMultipler;
-}
+};
 
 var sword = new item(5, 5, 0, 1, 1.07);
 
@@ -37,6 +40,17 @@ var anton = new item(2000, 2000, 0, 200, 1.07);
 var yarik = new item(10000, 10000, 0, 1000, 1.07);
 var nazar = new item(50000, 50000, 0, 20000, 1.07);
 var olia = new item(500000, 500000, 0, 100000, 1.07);
+
+load();
+function save(){
+  localStorage.setItem('dpc', dpc);
+  dpc = parseInt(localStorage.getItem('dpc'));
+};
+
+function load(){
+  let dpc = parseInt(localStorage.getItem('dpc'));
+  dpc = localValue;
+};
 
 function dpsEarn(){
   if (dps > 0) {
@@ -78,7 +92,7 @@ function clickHandlerEnemy(){
   };
   var clickX = event.pageX;
   var clickY = event.pageY;
-  $("#damageText").css({"top" : clickY + -50 + "px", "left" : clickX + -35 + "px"}).fadeIn(100).hide(100);
+  $("#damageText").css({"top" : clickY + -50 + "px", "left" : clickX + -35 + "px"}).fadeIn(10).hide(100);
   refreshGame();
   enemyAnimation();
 };
@@ -171,7 +185,6 @@ function refreshGame(){
     $("#stage").html("УРОВЕНЬ: " + stage)
   };
 };
-
 
 function enemyAnimation(){
   $("#enemyImg").css({"paddingTop": "+10px"});
