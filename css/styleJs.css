@@ -57,8 +57,8 @@ main{
 	text-align: center;
 	margin-bottom: 2vw;
 	box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.2);
-	cursor: pointer;
-	height: 84vmin;
+	cursor: url('water2.cur'), auto;
+	height: 86vmin;
 }
 
 footer{
@@ -374,10 +374,10 @@ blockquote p{
 }
 
 #enemyImg{
-	margin-top: 6vmax;
+	margin-top: 8vmax;
 	border: none;
 	transition: all 1s;
-	cursor: pointer;
+	cursor: url('water2.cur'), auto;
 	height: 55vmin;
 	width: auto;
 }
@@ -463,12 +463,12 @@ blockquote p{
 #settingsMenu{
 	position: absolute;
 	width: 30vmax;
-	height: 35vmin;
+	height: 50vmin;
 	border: 2px solid white;
 	border-radius: 0.55vw;
 	background-color: rgba(111, 211, 151, 0.8);
 	left: 38%;
-	top: 30vmin;
+	top: 25vmin;
 }
 
 #settingsCloseButton{
@@ -496,7 +496,7 @@ blockquote p{
 #killedCount{
 	position: fixed;
 	width: 66.5vw;
-	top: 84vmin;
+	top: 86vmin;
 	text-align: center;
 	color: tomato;
 	font-size: 2vmax;
@@ -506,7 +506,7 @@ blockquote p{
 #enemyName{
 	position: fixed;
 	width: 66.5vw;
-	top: 89vmin;
+	top: 91vmin;
 	text-align: center;
 	color: #6B8E23;
 	font-size: 2vmax;

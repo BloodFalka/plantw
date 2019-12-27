@@ -85,10 +85,10 @@ function load(){
       image : ["aloe", "cactus", "mandragora", "golem", "realCactus", "oldBroccole", "finnTheGreen", "grassBear"]
     };
 
-  /*  var currentEnemy = {
+    currentEnemy = {
       currentHealth: enemy.maxHealth,
       currentImage : enemy.image[random(enemy.image.length)]
-    };*/
+    };
 
     sword = new item(5, 5, 0, 1, 1.07);
 
@@ -110,7 +110,10 @@ function load(){
     goldMultipler = parseInt(localStorage.getItem('goldMultipler'));
 
     enemy = JSON.parse(localStorage.getItem("enemy"));
-  /*  currentEnemy = JSON.parse(localStorage.getItem("currentEnemy"));*/
+    currentEnemy = {
+      currentHealth: enemy.maxHealth,
+      currentImage : enemy.image[random(enemy.image.length)]
+    };
 
     sword = JSON.parse(localStorage.getItem("sword"));
 
@@ -138,6 +141,8 @@ function dpsEarn(){
     if (enemy.stageKilledCount == 11){
       stage++;
       enemy.stageKilledCount = 0;
+      enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
+      currentEnemy.currentHealth = enemy.maxHealth;
     };
     refreshGame();
     //enemyAnimation();
@@ -160,12 +165,14 @@ function clickHandlerEnemy(){
   if (enemy.stageKilledCount == 11){
     stage++;
     enemy.stageKilledCount = 0;
+    enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
+    currentEnemy.currentHealth = enemy.maxHealth;
   };
   var clickX = event.pageX;
   var clickY = event.pageY;
-  $("#damageText").css({"top" : clickY + -50 + "px", "left" : clickX + -35 + "px"}).fadeIn(10).hide(100);
+  $("#damageText").css({"top" : clickY + -50 + "px", "left" : clickX + -35 + "px"}).show(1).delay(100).hide(1);
   refreshGame();
-  enemyAnimation();
+  //enemyAnimation();
 };
 
 function rounded(number, countAfterFloat){
@@ -184,6 +191,13 @@ function noMoney(purchaseType){
   }else if (settings.language === "ruLanguage") {
     alert("Не хватает " + Math.floor(purchaseType.currentCost - gold) + " монеты");
   };
+};
+
+function resetGame(){
+  gold = 0;
+  dpc = 1;
+  save();
+  load();
 };
 
 function refreshGame(){
@@ -210,6 +224,11 @@ function refreshGame(){
 
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
     $("#stage").html("STAGE: " + stage)
+
+    $("#language").html("Language");
+    $("#resetOption").html("Reset");
+    $("#reset").html("Reset progress");
+
     save();
   }else if (settings.language === "ukLanguage") {
 
@@ -233,6 +252,11 @@ function refreshGame(){
 
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
     $("#stage").html("РІВЕНЬ: " + stage)
+
+    $("#language").html("Мова");
+    $("#resetOption").html("Скид");
+    $("#reset").html("Скинути прогрес");
+
     save();
   }else if (settings.language === "ruLanguage") {
 
@@ -256,6 +280,11 @@ function refreshGame(){
 
     $("#killedCount").html(enemy.stageKilledCount + "/" + 10);
     $("#stage").html("УРОВЕНЬ: " + stage)
+
+    $("#language").html("Язык");
+    $("#resetOption").html("Сброс");
+    $("#reset").html("Сбросить прогресс");
+
     save();
   };
 };
@@ -341,27 +370,32 @@ $(function(){
 
   $("#ukLanguage").click(function(){
     settings.language = "ukLanguage";
-    $(".settingsOption").html("Мова");
   });
 
   $("#enLanguage").click(function(){
     settings.language = "enLanguage";
-    $(".settingsOption").html("Language");
   });
 
   $("#ruLanguage").click(function(){
     settings.language = "ruLanguage";
-    $(".settingsOption").html("Язык");
+  });
+
+  $("#reset").click(function(){
+    let reset = confirm("Serioslly?");
+    if (reset === true) {
+      resetGame();
+    };
   });
 
   $("#settingsMenu").fadeOut();
+
   $("#damageText").hide();
 
   $("#settings").click(function(){
-    $("#settingsMenu").fadeToggle(1000);
+    $("#settingsMenu").fadeToggle(500);
   });
 
   $("#settingsCloseButton").click(function(){
-    $("#settingsMenu").fadeOut(1000);
+    $("#settingsMenu").fadeOut(500);
   });
 });
