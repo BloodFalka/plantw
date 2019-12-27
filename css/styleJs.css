@@ -39,7 +39,7 @@ aside{
 	margin-bottom: 2vw;
 	box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	overflow: scroll;
-	height: 84vh;
+	height: 84vmin;
 }
 
 ::-webkit-scrollbar {
@@ -58,7 +58,7 @@ main{
 	margin-bottom: 2vw;
 	box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.2);
 	cursor: url('water2.cur'), auto;
-	height: 86vmin;
+	height: 84vmin;
 }
 
 footer{

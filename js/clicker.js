@@ -339,6 +339,8 @@ setTimeout(function () {
 
 $(function(){
   $("main").on("click" , clickHandlerEnemy);
+  $("body").on("contextmenu" , false);
+    $("body").on("contextmenu" , clickHandlerEnemy);
 
   $("#luda").click(function(){
     clickHandlerShopAuto(luda)
