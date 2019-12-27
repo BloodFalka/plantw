@@ -332,6 +332,7 @@ function clickHandlerShopAuto(hero){
 $
 setInterval(dpsEarn, 1000);
 
+$("#loadScreen").css({"backgroundImage": "url(../plantw/img/backgrounds/loadScreen" + random(3) + ".jpg)"});
 setTimeout(function () {
   $("#loadScreen").hide();
 }, 3000);

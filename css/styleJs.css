@@ -520,7 +520,6 @@ blockquote p{
 }
 
 #loadScreen{
-	background-image: url(../img/clicker/loadScreen.jpg);
 	background-repeat: repeat;
 	background-color: white;
 	background-size: 30%;
