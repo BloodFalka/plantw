@@ -2,7 +2,8 @@ load();
 save();
 
 var settings = {
-  language : "enLanguage"
+  language : "enLanguage",
+  background : "2"
 };
 
 var gold = 0;
@@ -68,7 +69,8 @@ function save(){
 function load(){
   if ((parseInt(localStorage.getItem('gold')) === 0) && (parseInt(localStorage.getItem('dpc')) === 1)) {
     settings = {
-      language : "enLanguage"
+      language : "enLanguage",
+      background : "2"
     };
 
     gold = 0;
@@ -130,7 +132,7 @@ function dpsEarn(){
   if (dps > 0) {
     currentEnemy.currentHealth -= dps;
     if (currentEnemy.currentHealth <= 0) {
-      $("#enemyImg").fadeOut().fadeIn();
+      $("#enemyImg").fadeOut(50).delay(200).fadeIn(50);
       enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage-1));
       enemy.killedCount += 1;
       enemy.stageKilledCount += 1;
@@ -144,6 +146,7 @@ function dpsEarn(){
       enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
       currentEnemy.currentHealth = enemy.maxHealth;
     };
+    $("#autoDamageText").html(dps).css({"color" : "green", "position" : "absolute", "top" : 8.5 + "vmax", "left" : 85 + "vw"}).show(1).delay(300).hide(1);
     refreshGame();
     //enemyAnimation();
   }else {
@@ -154,7 +157,7 @@ function dpsEarn(){
 function clickHandlerEnemy(){
   currentEnemy.currentHealth -= dpc;
   if (currentEnemy.currentHealth <= 0) {
-    $("#enemyImg").fadeOut(200).fadeIn(100);
+    $("#enemyImg").fadeOut(50).delay(200).fadeIn(50);
     enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
     enemy.killedCount += 1;
     enemy.stageKilledCount += 1;
@@ -162,15 +165,35 @@ function clickHandlerEnemy(){
     currentEnemy.currentImage = enemy.image[random(enemy.image.length)];
     gold += Math.ceil((enemy.maxHealth/goldMultipler));
   };
-  if (enemy.stageKilledCount == 11){
-    stage++;
-    enemy.stageKilledCount = 0;
-    enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
-    currentEnemy.currentHealth = enemy.maxHealth;
+/*  if (stage % 5) {
+  }else {
+    if ((currentEnemy.currentHealth === enemy.maxHealth) && (stage != 1)) {
+      enemy.maxHealth *= 10;
+      currentEnemy.currentHealth = enemy.maxHealth;
+      enemy.stageKilledCount = 1;
+      //if (enemy.killedCount = ) {
+
+      //};
+    };
   };
-  var clickX = event.pageX;
-  var clickY = event.pageY;
-  $("#damageText").css({"top" : clickY + -50 + "px", "left" : clickX + -35 + "px"}).show(1).delay(100).hide(1);
+  if (stage % 6) {
+  }else {
+    if ((currentEnemy.currentHealth === enemy.maxHealth) && (stage != 1)) {
+      enemy.maxHealth /= 10;
+      currentEnemy.currentHealth = enemy.maxHealth;
+      enemy.stageKilledCount = 10;
+    };
+};*/
+
+if (enemy.stageKilledCount == 11){
+  stage++;
+  enemy.stageKilledCount = 0;
+  enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
+  currentEnemy.currentHealth = enemy.maxHealth;
+};
+  let clickX = event.pageX;
+  let clickY = event.pageY;
+  $("#clickDamageText").html(dpc).css({"color" : "white", "position" : "absolute", "top" : clickY + -40 + "px", "left" : clickX + -50 + "px"}).show(1).delay(100).hide(1);
   refreshGame();
   //enemyAnimation();
 };
@@ -201,7 +224,6 @@ function resetGame(){
 };
 
 function refreshGame(){
-  $("#damageText").text(dpc);
   if (settings.language === "enLanguage") {
 
     $("#gold").html("Oxygen: " + Math.floor(gold));
@@ -226,8 +248,12 @@ function refreshGame(){
     $("#stage").html("STAGE: " + stage)
 
     $("#language").html("Language");
+
     $("#resetOption").html("Reset");
     $("#reset").html("Reset progress");
+
+    $("#visualOption").html("Style");
+    $("#backgroundChange").html("Background Change");
 
     save();
   }else if (settings.language === "ukLanguage") {
@@ -254,8 +280,12 @@ function refreshGame(){
     $("#stage").html("РІВЕНЬ: " + stage)
 
     $("#language").html("Мова");
+
     $("#resetOption").html("Скид");
     $("#reset").html("Скинути прогрес");
+
+    $("#visualOption").html("Стиль");
+    $("#backgroundChange").html("Змінити фон");
 
     save();
   }else if (settings.language === "ruLanguage") {
@@ -282,8 +312,12 @@ function refreshGame(){
     $("#stage").html("УРОВЕНЬ: " + stage)
 
     $("#language").html("Язык");
+
     $("#resetOption").html("Сброс");
     $("#reset").html("Сбросить прогресс");
+
+    $("#visualOption").html("Стиль");
+    $("#backgroundChange").html("Изменить фон");
 
     save();
   };
@@ -332,15 +366,22 @@ function clickHandlerShopAuto(hero){
 $
 setInterval(dpsEarn, 1000);
 
-$("#loadScreen").css({"backgroundImage": "url(../plantw/img/backgrounds/loadScreen" + random(3) + ".jpg)"});
+$("#loadScreen").css({"backgroundImage": "url(../plantw/img/backgrounds/loadScreen" + random(4) + ".jpg)"});
 setTimeout(function () {
   $("#loadScreen").hide();
 }, 3000);
 
+$("html, body").css({"background" : "#ffc1d8 repeat fixed 10% url(../plantw/img/backgrounds/background" + settings.background + ".jpg)"});$("html, body").css({
+  "backgroundColor" : "#ffc1d8",
+  "backgroundRepeat" : "repeat",
+  "backgroundAttachment" : "fixed",
+  "backgroundSize" : "30%",
+  "backgroundImage" : "url(../plantw/img/backgrounds/background" + settings.background + ".jpg)"});
+
 $(function(){
   $("main").on("click" , clickHandlerEnemy);
   $("body").on("contextmenu" , false);
-    $("body").on("contextmenu" , clickHandlerEnemy);
+  $("main").on("contextmenu" , clickHandlerEnemy);
 
   $("#luda").click(function(){
     clickHandlerShopAuto(luda)
@@ -390,9 +431,23 @@ $(function(){
     };
   });
 
+  $("#backgroundChange").click(function(){
+    settings.background++;
+    if (settings.background > 2) {
+      settings.background = 0;
+    };
+
+    $("html, body").css({
+      "backgroundColor" : "#ffc1d8",
+      "backgroundRepeat" : "repeat",
+      "backgroundAttachment" : "fixed",
+      "backgroundSize" : "30%",
+      "backgroundImage" : "url(../plantw/img/backgrounds/background" + settings.background + ".jpg)"});
+  });
+
   $("#settingsMenu").fadeOut();
 
-  $("#damageText").hide();
+  $("#autoDamageText, #clickDamageText").hide();
 
   $("#settings").click(function(){
     $("#settingsMenu").fadeToggle(500);
