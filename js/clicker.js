@@ -6,11 +6,16 @@ var settings = {
   background : "2"
 };
 
+var damage = {
+  dpc : 1,
+  dps : 0,
+  criticalMultipler : 1,
+  criticalChance : 25
+};
+
 var gold = 0;
 var goldMultipler = 15;
 
-var dpc = 1;
-var dps = 0;
 var stage = 1;
 
 var enemy = {
@@ -25,15 +30,6 @@ var currentEnemy = {
   currentImage : enemy.image[random(enemy.image.length)]
 };
 
-function item(baseCost, currentCost, ownedCount, damageMultipler, costMultipler){
-  this.baseCost = baseCost;
-  this.currentCost = currentCost;
-  this.ownedCount = ownedCount;
-  this.damageMultipler = damageMultipler;
-  this.costMultipler = costMultipler;
-};
-
-
 var sword = new item(5, 5, 0, 1, 1.07);
 
 var luda = new item(50, 50, 0, 5, 1.07);
@@ -44,17 +40,18 @@ var nazar = new item(50000, 50000, 0, 20000, 1.07);
 var olia = new item(500000, 500000, 0, 100000, 1.07);
 
 load();
+
 function save(){
   localStorage.setItem('settings', JSON.stringify(settings));
 
-  localStorage.setItem('dpc', dpc);
-  localStorage.setItem('dps', dps);
+  localStorage.setItem('damage', JSON.stringify(damage));
+
   localStorage.setItem('stage', stage);
   localStorage.setItem('gold', gold);
   localStorage.setItem('goldMultipler', goldMultipler);
 
   localStorage.setItem('enemy', JSON.stringify(enemy));
-/*  localStorage.setItem('currentEnemy', JSON.stringify(currentEnemy)); */
+  localStorage.setItem('currentEnemy', JSON.stringify(currentEnemy));
 
   localStorage.setItem('sword', JSON.stringify(sword));
 
@@ -67,44 +64,13 @@ function save(){
 };
 
 function load(){
-  if ((parseInt(localStorage.getItem('gold')) === 0) && (parseInt(localStorage.getItem('dpc')) === 1)) {
-    settings = {
-      language : "enLanguage",
-      background : "2"
-    };
+  if (localStorage.length === 0) {
+    save();
 
-    gold = 0;
-    goldMultipler = 15;
+  }else {
+    settings = JSON.parse(localStorage.getItem('settings'));
 
-    dpc = 1;
-    dps = 0;
-    stage = 1;
-
-    enemy = {
-      maxHealth : 10*(stage - 1 + Math.pow(1.55, stage-1)),
-      killedCount : 0,
-      stageKilledCount: 0,
-      image : ["aloe", "cactus", "mandragora", "golem", "realCactus", "oldBroccole", "finnTheGreen", "grassBear"]
-    };
-
-    currentEnemy = {
-      currentHealth: enemy.maxHealth,
-      currentImage : enemy.image[random(enemy.image.length)]
-    };
-
-    sword = new item(5, 5, 0, 1, 1.07);
-
-    luda = new item(50, 50, 0, 5, 1.07);
-    galina = new item(500, 500,0, 20, 1.07);
-    anton = new item(2000, 2000, 0, 200, 1.07);
-    yarik = new item(10000, 10000, 0, 1000, 1.07);
-    nazar = new item(50000, 50000, 0, 20000, 1.07);
-    olia = new item(500000, 500000, 0, 100000, 1.07);
-  }else if (parseInt(localStorage.getItem('gold')) > 0){
-    settings = JSON.parse(localStorage.getItem("settings"));
-
-    dpc = parseInt(localStorage.getItem('dpc'));
-    dps = parseInt(localStorage.getItem('dps'));
+    damage = JSON.parse(localStorage.getItem('damage'));
 
     stage = parseInt(localStorage.getItem('stage'));
 
@@ -128,9 +94,29 @@ function load(){
   };
 };
 
+function item(baseCost, currentCost, ownedCount, damageMultipler, costMultipler){
+  this.baseCost = baseCost;
+  this.currentCost = currentCost;
+  this.ownedCount = ownedCount;
+  this.damageMultipler = damageMultipler;
+  this.costMultipler = costMultipler;
+};
+
+function critical(damage){
+  var criticalMultipler = 1;
+  var criticalChance = 25;
+  if (rounded(Math.random()*100, 2) <= criticalChance) {
+    return damage*criticalMultipler;
+  }else {
+    return 0;
+  };
+};
+
 function dpsEarn(){
-  if (dps > 0) {
-    currentEnemy.currentHealth -= dps;
+  if (damage.dps > 0) {
+    let fullDamage = damage.dpc+critical(damage.dpc);
+    $("#autoDamageText").html(fullDamage).css({"color" : "green", "position" : "absolute", "top" : 8.5 + "vmax", "left" : 85 + "vw"}).show(1).delay(300).hide(1);
+    currentEnemy.currentHealth -= fullDamage;
     if (currentEnemy.currentHealth <= 0) {
       $("#enemyImg").fadeOut(50).delay(200).fadeIn(50);
       enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage-1));
@@ -146,7 +132,6 @@ function dpsEarn(){
       enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
       currentEnemy.currentHealth = enemy.maxHealth;
     };
-    $("#autoDamageText").html(dps).css({"color" : "green", "position" : "absolute", "top" : 8.5 + "vmax", "left" : 85 + "vw"}).show(1).delay(300).hide(1);
     refreshGame();
     //enemyAnimation();
   }else {
@@ -155,7 +140,11 @@ function dpsEarn(){
 };
 
 function clickHandlerEnemy(){
-  currentEnemy.currentHealth -= dpc;
+  let fullDamage = damage.dpc+critical(damage.dpc);
+  let clickX = event.pageX;
+  let clickY = event.pageY;
+  $("#clickDamageText").html(fullDamage).css({"color" : "white", "position" : "absolute", "top" : clickY + -40 + "px", "left" : clickX + -50 + "px"}).show(1).delay(100).hide(1);
+  currentEnemy.currentHealth -= fullDamage;
   if (currentEnemy.currentHealth <= 0) {
     $("#enemyImg").fadeOut(50).delay(200).fadeIn(50);
     enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
@@ -191,9 +180,6 @@ if (enemy.stageKilledCount == 11){
   enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
   currentEnemy.currentHealth = enemy.maxHealth;
 };
-  let clickX = event.pageX;
-  let clickY = event.pageY;
-  $("#clickDamageText").html(dpc).css({"color" : "white", "position" : "absolute", "top" : clickY + -40 + "px", "left" : clickX + -50 + "px"}).show(1).delay(100).hide(1);
   refreshGame();
   //enemyAnimation();
 };
@@ -217,8 +203,45 @@ function noMoney(purchaseType){
 };
 
 function resetGame(){
+  settings = {
+    language : "enLanguage",
+    background : "2"
+  };
+
+  damage = {
+    dpc : 1,
+    dps : 0,
+    criticalMultipler : 1,
+    criticalChance : 25
+  };
+
   gold = 0;
-  dpc = 1;
+  goldMultipler = 15;
+
+  stage = 1;
+
+  enemy = {
+    maxHealth : 10*(stage - 1 + Math.pow(1.55, stage-1)),
+    killedCount : 0,
+    stageKilledCount: 0,
+    image : ["aloe", "cactus", "mandragora", "golem", "realCactus", "oldBroccole", "finnTheGreen", "grassBear"]
+  };
+
+  currentEnemy = {
+    currentHealth: enemy.maxHealth,
+    currentImage : enemy.image[random(enemy.image.length)]
+  };
+
+  sword = new item(5, 5, 0, 1, 1.07);
+
+  luda = new item(50, 50, 0, 5, 1.07);
+  galina = new item(500, 500,0, 20, 1.07);
+  anton = new item(2000, 2000, 0, 200, 1.07);
+  yarik = new item(10000, 10000, 0, 1000, 1.07);
+  nazar = new item(50000, 50000, 0, 20000, 1.07);
+  olia = new item(500000, 500000, 0, 100000, 1.07);
+
+  localStorage.clear();
   save();
   load();
 };
@@ -229,8 +252,8 @@ function refreshGame(){
     $("#gold").html("Oxygen: " + Math.floor(gold));
 
     $("#enemyImg").attr("src", "img/clicker/" + currentEnemy.currentImage + ".png");
-    $("#dpc").html("WpC: " + Math.floor(dpc));
-    $("#dps").html("WpS: " + Math.floor(dps));
+    $("#dpc").html("WpC: " + Math.floor(damage.dpc));
+    $("#dps").html("WpS: " + Math.floor(damage.dps));
 
     $("#sword").html("Watering Pot </br>" + Math.floor(sword.currentCost) + " Oxygen" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Level "+ sword.ownedCount);
 
@@ -261,8 +284,8 @@ function refreshGame(){
     $("#gold").html("Кисню: " + Math.floor(gold));
 
     $("#enemyImg").attr("src", "img/clicker/" + currentEnemy.currentImage + ".png");
-    $("#dpc").html("WpC: " + Math.floor(dpc));
-    $("#dps").html("WpS: " + Math.floor(dps));
+    $("#dpc").html("WpC: " + Math.floor(damage.dpc));
+    $("#dps").html("WpS: " + Math.floor(damage.dps));
 
     $("#sword").html("Ліїчка </br>" + Math.floor(sword.currentCost) + " Кисню" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Рівень "+ sword.ownedCount);
 
@@ -293,8 +316,8 @@ function refreshGame(){
     $("#gold").html("Кислород: " + Math.floor(gold));
 
     $("#enemyImg").attr("src", "img/clicker/" + currentEnemy.currentImage + ".png");
-    $("#dpc").html("WpC: " + Math.floor(dpc));
-    $("#dps").html("WpS: " + Math.floor(dps));
+    $("#dpc").html("WpC: " + Math.floor(damage.dpc));
+    $("#dps").html("WpS: " + Math.floor(damage.dps));
 
     $("#sword").html("Лейка </br>" + Math.floor(sword.currentCost) + " Кислорода" +" (+" + Math.floor(sword.damageMultipler) + " WpC) </br>" + "Уровень "+ sword.ownedCount);
 
@@ -335,7 +358,7 @@ function enemyAnimation(){
 function clickHandlerShopClick(equipment){
   if (gold >= equipment.currentCost) {
     gold -= equipment.currentCost;
-    dpc += equipment.damageMultipler;
+    damage.dpc += equipment.damageMultipler;
     equipment.ownedCount++;
     equipment.currentCost = Math.floor((equipment.baseCost + equipment.ownedCount) * Math.pow(equipment.costMultipler, (equipment.ownedCount-1)));
     refreshGame();
@@ -351,7 +374,7 @@ function clickHandlerShopClick(equipment){
 function clickHandlerShopAuto(hero){
   if (gold >= hero.currentCost) {
     gold -= hero.currentCost;
-    dps += hero.damageMultipler;
+    damage.dps += hero.damageMultipler;
     hero.ownedCount++;
     hero.currentCost = Math.floor((hero.baseCost + hero.ownedCount) * Math.pow(hero.costMultipler, (hero.ownedCount-1)));
     refreshGame();
