@@ -569,11 +569,11 @@ blockquote p{
 	#settingsMenu{
 		position: absolute;
 		width: 30vmax;
-		height: 55vmin;
+		height: 30vh;
 		border: 2px solid white;
 		border-radius: 0.55vw;
 		background-color: rgba(111, 211, 151, 0.8);
-		left: 0%;
+		left: 23%;
 		top: 25vmin;
 	}
 	#enemyImg{
