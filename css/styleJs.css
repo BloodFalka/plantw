@@ -391,12 +391,12 @@ blockquote p{
 }
 
 #dpc, #dps{
-	position: fixed;
+	position: absolute;
 	color: white;
 	font-size: 2vmax;
-	top: 6.2vmax;
+	top: 1vh;
 	text-align: right;
-	width: 63vw;
+	width: 47vw;
 }
 
 #dps{
@@ -562,7 +562,7 @@ blockquote p{
 		border-radius: 1.5vw;
 		text-align: center;
 		width: 100%;
-		margin-bottom: 4vh;
+		margin-bottom: 1vh;
 		box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 		overflow: scroll;
 		height: 35vh;
@@ -578,7 +578,7 @@ blockquote p{
 		top: 25vmin;
 	}
 	#enemyImg{
-		margin-top: 8vmax;
+		margin-top: 1vh;
 		border: none;
 		transition: all 1s;
 		cursor: url('water2.cur'), auto;
@@ -599,13 +599,13 @@ blockquote p{
 	}
 
 	#dpc, #dps{
-		position: fixed;
-		color: white;
-		font-size: 2vmax;
-		top: 6.2vmax;
-		text-align: right;
-		width: 77vw;
-	}
+ position: relative;
+ display: inline-block;
+ color: white;
+ width: 15vw;
+ font-size: 2vmax;
+ top: 1vh;
+ }
 
 	#dps{
 		left: 18vw;
@@ -634,27 +634,29 @@ blockquote p{
 	}*/
 
 	#enemyHealth{
-		position: fixed;
-		top: 9vmax;
+		position: relative;
+		top: 1vh;
 		width: 99vw;
 		text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+		margin-bottom: 1vh;
 		font-size: 3vmax;
 	}
 
 	#stage{
-		position: fixed;
-		text-align: left;
-		top: 6.2vmax;
+		position: relative;
+		float: left;
+		clear: right;
+		width: 22vw;
+		top: 1vh;
 		margin-left: 2vw;
-		width: 	30vw;
 		text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 		font-size: 2vmax;
 	}
 
 	#enemyName{
-		position: fixed;
+		position: relative;
 		width: 99vw;
-		top: 51vh;
+		top: 0vh;
 		text-align: center;
 		color: #6B8E23;
 		font-size: 2vmax;
@@ -668,9 +670,9 @@ blockquote p{
 	}
 
 	#killedCount{
-		position: fixed;
+		position: relative;
 		width: 99vw;
-		top: 48vh;
+		top: 0vh;
 		text-align: center;
 		color: tomato;
 		font-size: 2vmax;
