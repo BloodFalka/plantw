@@ -654,9 +654,9 @@ blockquote p{
 	}
 
 	#enemyName{
-		position: relative;
+		position: absolute;
 		width: 99vw;
-		top: 0vh;
+		top: 43vh;
 		text-align: center;
 		color: #6B8E23;
 		font-size: 2vmax;
@@ -670,9 +670,9 @@ blockquote p{
 	}
 
 	#killedCount{
-		position: relative;
+		position: absolute;
 		width: 99vw;
-		top: 0vh;
+		top: 46vh;
 		text-align: center;
 		color: tomato;
 		font-size: 2vmax;
