@@ -540,7 +540,7 @@ blockquote p{
 	left: 34vw;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
 	main{
 		position: relative;
 		margin-top: 5vmax;
