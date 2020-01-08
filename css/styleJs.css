@@ -539,3 +539,140 @@ blockquote p{
 	top: 38vh;
 	left: 34vw;
 }
+
+@media (max-width: 500px) {
+	main{
+		position: relative;
+		margin-top: 5vmax;
+		background-color: rgba(135, 206, 235, 0.8);
+		width: 100%;
+		border-radius: 1.5vw;
+		text-align: center;
+		margin-bottom: 2vw;
+		box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.2);
+		cursor: url('water2.cur'), auto;
+		height: 50vh;
+	}
+	aside{
+		position: relative;
+		margin-top: 0.5vh;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		background-color: rgba(111, 211, 151, 0.8);
+		border-radius: 1.5vw;
+		text-align: center;
+		width: 100%;
+		margin-bottom: 4vh;
+		box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+		overflow: scroll;
+		height: 40vh;
+	}
+	#settingsMenu{
+		position: absolute;
+		width: 30vmax;
+		height: 55vmin;
+		border: 2px solid white;
+		border-radius: 0.55vw;
+		background-color: rgba(111, 211, 151, 0.8);
+		left: 0%;
+		top: 25vmin;
+	}
+	#enemyImg{
+		margin-top: 8vmax;
+		border: none;
+		transition: all 1s;
+		cursor: url('water2.cur'), auto;
+		height: 33vh;
+		width: auto;
+	}
+
+	.shop p{
+		font-size: 2vmax;
+		font-weight: bold;
+		color: black;
+		text-align: center;
+		padding: 0 0;
+		margin: 1.5vmax 1vmax;
+		cursor: pointer;
+		border: 0.5vmin solid green;
+		border-radius: 0.25vw;
+	}
+
+	#dpc, #dps{
+		position: fixed;
+		color: white;
+		font-size: 2vmax;
+		top: 6.2vmax;
+		text-align: right;
+		width: 77vw;
+	}
+
+	#dps{
+		left: 18vw;
+	}
+
+	#gold{
+		display: inline;
+		position: absolute;
+		width: 59vw;
+		float: right;
+		clear: right;
+		color: rgba(135, 206, 235, 1);
+		text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+		margin-top: 0.5vh;
+		font-size: 3vmax;
+	}
+
+	/*#diamonds{
+		display: inline-block;
+		width: 15%;
+		float: right;
+		color: skyblue;
+		text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+		margin-top: 0.1vh;
+		font-size: 4vh;
+	}*/
+
+	#enemyHealth{
+		position: fixed;
+		top: 9vmax;
+		width: 99vw;
+		text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+		font-size: 3vmax;
+	}
+
+	#stage{
+		position: fixed;
+		text-align: left;
+		top: 6.2vmax;
+		margin-left: 2vw;
+		width: 	30vw;
+		text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+		font-size: 2vmax;
+	}
+
+	#enemyName{
+		position: fixed;
+		width: 99vw;
+		top: 51vh;
+		text-align: center;
+		color: #6B8E23;
+		font-size: 2vmax;
+		text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+	}
+
+	#clickDamageText, #autoDamageText{
+		position: absolute;
+		font-size: 4vmax;
+		text-shadow: 2px 2px 6px black;
+	}
+
+	#killedCount{
+		position: fixed;
+		width: 99vw;
+		top: 48vh;
+		text-align: center;
+		color: tomato;
+		font-size: 2vmax;
+		text-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+	}
+}
