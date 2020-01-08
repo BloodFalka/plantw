@@ -1,6 +1,7 @@
 html,
 body {
 		user-select: none;
+		overflow: hidden;
 }
 
 header {
@@ -564,7 +565,7 @@ blockquote p{
 		margin-bottom: 4vh;
 		box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 		overflow: scroll;
-		height: 40vh;
+		height: 35vh;
 	}
 	#settingsMenu{
 		position: absolute;
