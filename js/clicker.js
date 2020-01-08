@@ -1,46 +1,6 @@
 load();
 save();
 
-var settings = {
-  language : "enLanguage",
-  background : "2"
-};
-
-var damage = {
-  dpc : 1,
-  dps : 0,
-  criticalMultipler : 1,
-  criticalChance : 25
-};
-
-var gold = 0;
-var goldMultipler = 15;
-
-var stage = 1;
-
-var enemy = {
-  maxHealth : 10*(stage - 1 + Math.pow(1.55, stage-1)),
-  killedCount : 0,
-  stageKilledCount: 0,
-  image : ["aloe", "cactus", "mandragora", "golem", "realCactus", "oldBroccole", "finnTheGreen", "grassBear"]
-};
-
-var currentEnemy = {
-  currentHealth: enemy.maxHealth,
-  currentImage : enemy.image[random(enemy.image.length)]
-};
-
-var sword = new item(5, 5, 0, 1, 1.07);
-
-var luda = new item(50, 50, 0, 5, 1.07);
-var galina = new item(500, 500,0, 20, 1.07);
-var anton = new item(2000, 2000, 0, 200, 1.07);
-var yarik = new item(10000, 10000, 0, 1000, 1.07);
-var nazar = new item(50000, 50000, 0, 20000, 1.07);
-var olia = new item(500000, 500000, 0, 100000, 1.07);
-
-load();
-
 function save(){
   localStorage.setItem('settings', JSON.stringify(settings));
 
@@ -64,10 +24,59 @@ function save(){
 };
 
 function load(){
-  if (localStorage.length === 0) {
-    save();
+  if (localStorage.length == 0) {
+      var loadCount = 0;
+  } else {
+      loadCount = parseInt(localStorage.getItem('loadCount'));
+  };
+  localStorage.setItem('loadCount', loadCount);
+
+  if (parseInt(localStorage.getItem('loadCount')) == 0) {
+    loadCount++;
+    localStorage.setItem('loadCount', loadCount);
+
+    settings = {
+      language : "enLanguage",
+      background : "2"
+    };
+
+    gold = 0;
+    goldMultipler = 15;
+
+    damage = {
+      dpc : 1,
+      dps : 0,
+      criticalMultipler : 1,
+      criticalChance : 25
+    };
+
+    stage = 1;
+
+    enemy = {
+      maxHealth : 10*(stage - 1 + Math.pow(1.55, stage-1)),
+      killedCount : 0,
+      stageKilledCount: 0,
+      image : ["aloe", "cactus", "mandragora", "golem", "realCactus", "oldBroccole", "finnTheGreen", "grassBear"]
+    };
+
+    currentEnemy = {
+      currentHealth: enemy.maxHealth,
+      currentImage : enemy.image[random(enemy.image.length)]
+    };
+
+    sword = new item(5, 5, 0, 1, 1.07);
+
+    luda = new item(50, 50, 0, 5, 1.07);
+    galina = new item(500, 500,0, 20, 1.07);
+    anton = new item(2000, 2000, 0, 200, 1.07);
+    yarik = new item(10000, 10000, 0, 1000, 1.07);
+    nazar = new item(50000, 50000, 0, 20000, 1.07);
+    olia = new item(500000, 500000, 0, 100000, 1.07);
 
   }else {
+    loadCount++;
+    localStorage.setItem('loadCount', loadCount);
+
     settings = JSON.parse(localStorage.getItem('settings'));
 
     damage = JSON.parse(localStorage.getItem('damage'));
@@ -102,11 +111,9 @@ function item(baseCost, currentCost, ownedCount, damageMultipler, costMultipler)
   this.costMultipler = costMultipler;
 };
 
-function critical(damage){
-  var criticalMultipler = 1;
-  var criticalChance = 25;
-  if (rounded(Math.random()*100, 2) <= criticalChance) {
-    return damage*criticalMultipler;
+function critical(damageType, damage){
+  if (rounded(Math.random()*100, 2) <= damage.criticalChance) {
+    return damageType*damage.criticalMultipler;
   }else {
     return 0;
   };
@@ -114,9 +121,13 @@ function critical(damage){
 
 function dpsEarn(){
   if (damage.dps > 0) {
-    let fullDamage = damage.dpc+critical(damage.dpc);
-    $("#autoDamageText").html(fullDamage).css({"color" : "green", "position" : "absolute", "top" : 8.5 + "vmax", "left" : 85 + "vw"}).show(1).delay(300).hide(1);
-    currentEnemy.currentHealth -= fullDamage;
+    var fullDamageDps = damage.dps+critical(damage.dps, damage);
+    if (fullDamageDps === damage.dps) {
+      $("#autoDamageText").html(fullDamageDps).css({"color" : "green", "position" : "absolute", "top" : 8.5 + "vmax", "left" : 85 + "vw"}).show(1).delay(300).hide(1);
+    }else {
+      $("#autoDamageText").html(fullDamageDps).css({"color" : "red", "position" : "absolute", "top" : 8.5 + "vmax", "left" : 85 + "vw"}).show(1).delay(300).hide(1);
+    };
+    currentEnemy.currentHealth -= fullDamageDps;
     if (currentEnemy.currentHealth <= 0) {
       $("#enemyImg").fadeOut(50).delay(200).fadeIn(50);
       enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage-1));
@@ -140,11 +151,15 @@ function dpsEarn(){
 };
 
 function clickHandlerEnemy(){
-  let fullDamage = damage.dpc+critical(damage.dpc);
+  var fullDamageDpc = damage.dpc+critical(damage.dpc, damage);
   let clickX = event.pageX;
   let clickY = event.pageY;
-  $("#clickDamageText").html(fullDamage).css({"color" : "white", "position" : "absolute", "top" : clickY + -40 + "px", "left" : clickX + -50 + "px"}).show(1).delay(100).hide(1);
-  currentEnemy.currentHealth -= fullDamage;
+  if (fullDamageDpc === damage.dpc) {
+    $("#clickDamageText").html(fullDamageDpc).css({"color" : "white", "position" : "absolute", "top" : clickY + -40 + "px", "left" : clickX + -50 + "px"}).show(1).delay(100).hide(1);
+  } else {
+    $("#clickDamageText").html(fullDamageDpc).css({"color" : "yellow", "position" : "absolute", "top" : clickY + -40 + "px", "left" : clickX + -50 + "px"}).show(1).delay(100).hide(1);
+  };
+  currentEnemy.currentHealth -= fullDamageDpc;
   if (currentEnemy.currentHealth <= 0) {
     $("#enemyImg").fadeOut(50).delay(200).fadeIn(50);
     enemy.maxHealth = 10*(stage - 1 + Math.pow(1.55, stage - 1));
@@ -203,47 +218,10 @@ function noMoney(purchaseType){
 };
 
 function resetGame(){
-  settings = {
-    language : "enLanguage",
-    background : "2"
-  };
-
-  damage = {
-    dpc : 1,
-    dps : 0,
-    criticalMultipler : 1,
-    criticalChance : 25
-  };
-
-  gold = 0;
-  goldMultipler = 15;
-
-  stage = 1;
-
-  enemy = {
-    maxHealth : 10*(stage - 1 + Math.pow(1.55, stage-1)),
-    killedCount : 0,
-    stageKilledCount: 0,
-    image : ["aloe", "cactus", "mandragora", "golem", "realCactus", "oldBroccole", "finnTheGreen", "grassBear"]
-  };
-
-  currentEnemy = {
-    currentHealth: enemy.maxHealth,
-    currentImage : enemy.image[random(enemy.image.length)]
-  };
-
-  sword = new item(5, 5, 0, 1, 1.07);
-
-  luda = new item(50, 50, 0, 5, 1.07);
-  galina = new item(500, 500,0, 20, 1.07);
-  anton = new item(2000, 2000, 0, 200, 1.07);
-  yarik = new item(10000, 10000, 0, 1000, 1.07);
-  nazar = new item(50000, 50000, 0, 20000, 1.07);
-  olia = new item(500000, 500000, 0, 100000, 1.07);
-
-  localStorage.clear();
-  save();
+  loadCount = 0;
+  localStorage.setItem('loadCount', loadCount);
   load();
+  save();
 };
 
 function refreshGame(){
