@@ -222,6 +222,7 @@ function resetGame(){
   localStorage.setItem('loadCount', loadCount);
   load();
   save();
+  $("#settingsMenu").fadeOut(500);
 };
 
 function refreshGame(){
